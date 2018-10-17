@@ -1,0 +1,34 @@
+node oven(finish, start, c, cold, temp_ok: bool) returns(s: int ; power: int)
+let
+	automaton
+		state OFF do
+			s=0;
+			power=0;
+		unless start & not c then STANDBY
+			| start & c then HEAT
+		state HEAT do
+			s=1;
+			power=1500;
+		unless finish then OFF
+			| temp_ok then MAINTAIN
+		state STANDBY do
+			s=2;
+			power=0;
+		unless c then HEAT
+		state MAINTAIN do
+			s=3;
+			power=300;
+		unless cold & c then REHEAT
+			| finish then OFF
+		state REHEAT do
+			s=4;
+			power=1000;
+		unless temp_ok then MAINTAIN
+			| finish then OFF
+	end
+tel
+
+node task(f1,s1,c1,col1, temp1: bool) returns(o: int ; p : int)
+let
+	(o,p) = inlined oven(f1,s1,c1,col1, temp1)
+tel
