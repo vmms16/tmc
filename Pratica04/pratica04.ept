@@ -1,0 +1,81 @@
+node rad(up1, down1, up2, down2, c1, c2 : bool) returns (power: int)
+let
+	automaton
+		state OFF do
+			power = 0;
+		unless up1 or not c1 then FROST
+		state FROST do
+			power = 300;
+		unless up1 & c1 then ECO
+			| down1 or not c1 then OFF
+			| up2 & c2 then HIGHT
+		state ECO do 
+			power = 1500;
+		unless down1 or not c1 then ECO
+			| up2 & c2 then HIGHT
+		state HIGHT do
+			power = 2000;
+		unless down1 & not c1 then ECO
+			| down2 & not c2 then FROST
+	end
+tel
+
+node ws( s, e ,c:bool) returns (power: int)
+let
+	automaton
+		state OFF do
+			power = 0;
+		unless s then WF
+		state WF do
+			power = 15;
+		unless e & c then WASHING
+			| e & not c then STANDBY
+		state WASHING do
+			power = 250;
+		unless e then RINSE
+		state RINSE do
+			power = 200;
+		unless e then SPIN
+		state SPIN do
+			power = 800;
+		unless e then OFF
+		state STANDBY do
+			power = 0;
+		unless c then WASHING
+	end
+tel
+
+node oven(finish, start, cold, temp_ok, c: bool) returns(power: int)
+let
+	automaton
+		state OFF do
+			power=0;
+		unless start & not c then STANDBY
+			| start & c then HEAT
+		state HEAT do
+			power=1500;
+		unless finish then OFF
+			| temp_ok then MAINTAIN
+		state STANDBY do
+			power=0;
+		unless c then HEAT
+		state MAINTAIN do
+			power=300;
+		unless cold & c then REHEAT
+			| finish then OFF
+		state REHEAT do
+			power=1000;
+		unless temp_ok then MAINTAIN
+			| finish then OFF
+	end
+tel
+
+node task(up1, down1, up2, down2, s, e, finish, start, cold, temp_ok: bool) returns(p1, p2, p3: int)
+	contract
+	 enforce (p1+p2+p3 <= 1500)
+	with(c1,c2,c3,c4: bool)
+let
+	p1 = inlined rad(up1, down1, up2, down2, c1, c2);
+	p2 = inlined ws(s, e, c3);
+	p3 = inlined oven(finish, start, cold, temp_ok, c4)
+tel
