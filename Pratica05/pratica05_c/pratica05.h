@@ -1,4 +1,4 @@
-/* --- Generated the 29/10/2018 at 10:47 --- */
+/* --- Generated the 31/10/2018 at 9:24 --- */
 /* --- heptagon compiler, version 1.03.00 (compiled thu. may. 3 2:35:29 CET 2018) --- */
 /* --- Command line: /usr/local/bin/heptc -target c -target z3z -s task pratica05.ept --- */
 
@@ -8,8 +8,8 @@
 #include "pratica05_types.h"
 #include "task_controller.h"
 typedef struct Pratica05__rad_mem {
-  int v_148;
-  int v_147;
+  int v_150;
+  int v_149;
   int pnr;
 } Pratica05__rad_mem;
 
@@ -25,8 +25,8 @@ void Pratica05__rad_step(int up1, int down1, int up2, int down2, int c1,
                          Pratica05__rad_mem* self);
 
 typedef struct Pratica05__police_mem {
-  int v_168;
-  int v_167;
+  int v_170;
+  int v_169;
   int pnr;
 } Pratica05__police_mem;
 
@@ -43,9 +43,9 @@ void Pratica05__police_step(int eco, int confort,
                             Pratica05__police_mem* self);
 
 typedef struct Pratica05__ws_mem {
+  int v_209;
+  int v_208;
   int v_207;
-  int v_206;
-  int v_205;
   int pnr;
 } Pratica05__ws_mem;
 
@@ -59,9 +59,9 @@ void Pratica05__ws_step(int s, int e, int c, Pratica05__ws_out* _out,
                         Pratica05__ws_mem* self);
 
 typedef struct Pratica05__oven_mem {
+  int v_261;
+  int v_260;
   int v_259;
-  int v_258;
-  int v_257;
   int pnr;
 } Pratica05__oven_mem;
 
@@ -139,16 +139,16 @@ typedef struct Pratica05__task_mem {
   int ck_21_1;
   int ck_19_1;
   int ck_17_1;
+  int v_311;
+  int v_310;
   int v_309;
-  int v_308;
-  int v_307;
+  int v_364;
+  int v_363;
   int v_362;
-  int v_361;
-  int v_360;
-  int v_398;
-  int v_397;
-  int v_418;
-  int v_417;
+  int v_400;
+  int v_399;
+  int v_420;
+  int v_419;
   int pnr_8;
   int pnr_7;
   int pnr_6;

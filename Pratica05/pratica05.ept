@@ -176,7 +176,7 @@ node task(up1, down1, up2, down2, s, e, finish, start, cold, temp_ok, eco, confo
 			end 
 			
 		tel 
-	 enforce (rule5 & rule1 & rule4)
+	 enforce (rule1 & rule2 & rule3 & rule4 & rule5)
 	with(c1,c2,c3,c4,c_lamp1,c_lamp2,c_tv2,c_tv1,c_door,c_window: bool)
 let
 	(pl, sp)= inlined police(eco, confort);

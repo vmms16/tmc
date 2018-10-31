@@ -19,8 +19,8 @@ type st = St_OFF|St_HIGHT|St_FROST|St_ECO
 node rad(up1 : bool; down1 : bool; up2 : bool; down2 : bool; c1 : bool;
           c2 : bool)
 returns (power : int; ss : int)
-var v_146 : bool; v_145 : bool; v_144 : bool; v_143 : bool; v_142 : bool;
-    v_141 : bool; v_140 : int; v_139 : int; v_138 : int; v_137 : int;
+var v_148 : bool; v_147 : bool; v_146 : bool; v_145 : bool; v_144 : bool;
+    v_143 : bool; v_142 : int; v_141 : int; v_140 : int; v_139 : int;
     ns_St_HIGHT_2_0 : bool; ns_St_HIGHT_2_1 : bool; ns_St_ECO_2_0 : bool;
     ns_St_ECO_2_1 : bool; ns_St_FROST_2_0 : bool; ns_St_FROST_2_1 : bool;
     ns_St_OFF_2_0 : bool; ns_St_OFF_2_1 : bool; ck_1_2_0 : bool;
@@ -38,8 +38,8 @@ var v_146 : bool; v_145 : bool; v_144 : bool; v_143 : bool; v_142 : bool;
     v_9_2_1 : bool; v_10 : bool; v_9_2 : bool; v_9_1 : bool; v_8 : bool;
     v_7 : bool; v_6 : bool; v_4_2_0 : bool; v_4_2_1 : bool; v_5 : bool;
     v_4_2 : bool; v_4_1 : bool; v_3 : bool; v_2 : bool; v_1 : bool; v : bool;
-    v_154 : bool; v_153 : bool; v_152 : bool; v_151 : bool; v_150 : bool;
-    v_149 : bool; v_148 : bool; v_147 : bool; s_St_HIGHT_2_0 : bool;
+    v_156 : bool; v_155 : bool; v_154 : bool; v_153 : bool; v_152 : bool;
+    v_151 : bool; v_150 : bool; v_149 : bool; s_St_HIGHT_2_0 : bool;
     s_St_HIGHT_2_1 : bool; s_St_ECO_2_0 : bool; s_St_ECO_2_1 : bool;
     s_St_FROST_2_0 : bool; s_St_FROST_2_1 : bool; s_St_OFF_2_0 : bool;
     s_St_OFF_2_1 : bool; ck_2_0 : bool; ck_2_1 : bool; r_St_HIGHT : bool;
@@ -73,21 +73,21 @@ let
   nr_St_HIGHT = false;
   ns_St_HIGHT_1 = false;
   ns_St_HIGHT_2 = true;
-  v_137 = merge ck_1_2_1 (true -> power_St_ECO)(false -> power_St_FROST);
-  v_138 = merge ck_1_2_0 (true -> power_St_HIGHT)(false -> power_St_OFF);
-  power = merge ck_1_1 (true -> v_137)(false -> v_138);
-  v_139 = merge ck_1_2_1 (true -> ss_St_ECO)(false -> ss_St_FROST);
-  v_140 = merge ck_1_2_0 (true -> ss_St_HIGHT)(false -> ss_St_OFF);
-  ss = merge ck_1_1 (true -> v_139)(false -> v_140);
-  v_141 = merge ck_1_2_1 (true -> ns_St_ECO_1)(false -> ns_St_FROST_1);
-  v_142 = merge ck_1_2_1 (true -> ns_St_ECO_2)(false -> ns_St_FROST_2);
-  v_143 = merge ck_1_2_0 (true -> ns_St_HIGHT_1)(false -> ns_St_OFF_1);
-  v_144 = merge ck_1_2_0 (true -> ns_St_HIGHT_2)(false -> ns_St_OFF_2);
-  ns_1 = merge ck_1_1 (true -> v_141)(false -> v_143);
-  ns_2 = merge ck_1_1 (true -> v_142)(false -> v_144);
-  v_145 = merge ck_1_2_1 (true -> nr_St_ECO)(false -> nr_St_FROST);
-  v_146 = merge ck_1_2_0 (true -> nr_St_HIGHT)(false -> nr_St_OFF);
-  nr = merge ck_1_1 (true -> v_145)(false -> v_146);
+  v_139 = merge ck_1_2_1 (true -> power_St_ECO)(false -> power_St_FROST);
+  v_140 = merge ck_1_2_0 (true -> power_St_HIGHT)(false -> power_St_OFF);
+  power = merge ck_1_1 (true -> v_139)(false -> v_140);
+  v_141 = merge ck_1_2_1 (true -> ss_St_ECO)(false -> ss_St_FROST);
+  v_142 = merge ck_1_2_0 (true -> ss_St_HIGHT)(false -> ss_St_OFF);
+  ss = merge ck_1_1 (true -> v_141)(false -> v_142);
+  v_143 = merge ck_1_2_1 (true -> ns_St_ECO_1)(false -> ns_St_FROST_1);
+  v_144 = merge ck_1_2_1 (true -> ns_St_ECO_2)(false -> ns_St_FROST_2);
+  v_145 = merge ck_1_2_0 (true -> ns_St_HIGHT_1)(false -> ns_St_OFF_1);
+  v_146 = merge ck_1_2_0 (true -> ns_St_HIGHT_2)(false -> ns_St_OFF_2);
+  ns_1 = merge ck_1_1 (true -> v_143)(false -> v_145);
+  ns_2 = merge ck_1_1 (true -> v_144)(false -> v_146);
+  v_147 = merge ck_1_2_1 (true -> nr_St_ECO)(false -> nr_St_FROST);
+  v_148 = merge ck_1_2_0 (true -> nr_St_HIGHT)(false -> nr_St_OFF);
+  nr = merge ck_1_1 (true -> v_147)(false -> v_148);
   ck_1_2_1 = (ck_1_2 when true(ck_1_1));
   ck_1_2_0 = (ck_1_2 when false(ck_1_1));
   ns_St_OFF_2_1 = (ns_St_OFF_2 when true(ns_St_OFF_1));
@@ -98,10 +98,10 @@ let
   ns_St_ECO_2_0 = (ns_St_ECO_2 when false(ns_St_ECO_1));
   ns_St_HIGHT_2_1 = (ns_St_HIGHT_2 when true(ns_St_HIGHT_1));
   ns_St_HIGHT_2_0 = (ns_St_HIGHT_2 when false(ns_St_HIGHT_1));
-  v_147 = false fby ns_1;
-  v_148 = false fby ns_2;
-  ck_1_3 = v_147;
-  ck_2 = v_148;
+  v_149 = false fby ns_1;
+  v_150 = false fby ns_2;
+  ck_1_3 = v_149;
+  ck_2 = v_150;
   r_St_OFF =
     if v_20 then true else ((pnr when false(ck_1_3)) when false(ck_2_0));
   s_St_OFF_1 = if v_20 then true else false;
@@ -154,15 +154,15 @@ let
   v = not(((c1 when false(ck_1_3)) when true(ck_2_0)));
   v_4_2_1 = (v_4_2 when true(v_4_1));
   v_4_2_0 = (v_4_2 when false(v_4_1));
-  v_149 = merge ck_2_1 (true -> s_St_ECO_1)(false -> s_St_FROST_1);
-  v_150 = merge ck_2_1 (true -> s_St_ECO_2)(false -> s_St_FROST_2);
-  v_151 = merge ck_2_0 (true -> s_St_HIGHT_1)(false -> s_St_OFF_1);
-  v_152 = merge ck_2_0 (true -> s_St_HIGHT_2)(false -> s_St_OFF_2);
-  s_1 = merge ck_1_3 (true -> v_149)(false -> v_151);
-  s_2 = merge ck_1_3 (true -> v_150)(false -> v_152);
-  v_153 = merge ck_2_1 (true -> r_St_ECO)(false -> r_St_FROST);
-  v_154 = merge ck_2_0 (true -> r_St_HIGHT)(false -> r_St_OFF);
-  r = merge ck_1_3 (true -> v_153)(false -> v_154);
+  v_151 = merge ck_2_1 (true -> s_St_ECO_1)(false -> s_St_FROST_1);
+  v_152 = merge ck_2_1 (true -> s_St_ECO_2)(false -> s_St_FROST_2);
+  v_153 = merge ck_2_0 (true -> s_St_HIGHT_1)(false -> s_St_OFF_1);
+  v_154 = merge ck_2_0 (true -> s_St_HIGHT_2)(false -> s_St_OFF_2);
+  s_1 = merge ck_1_3 (true -> v_151)(false -> v_153);
+  s_2 = merge ck_1_3 (true -> v_152)(false -> v_154);
+  v_155 = merge ck_2_1 (true -> r_St_ECO)(false -> r_St_FROST);
+  v_156 = merge ck_2_0 (true -> r_St_HIGHT)(false -> r_St_OFF);
+  r = merge ck_1_3 (true -> v_155)(false -> v_156);
   ck_2_1 = (ck_2 when true(ck_1_3));
   ck_2_0 = (ck_2 when false(ck_1_3));
   s_St_OFF_2_1 = (s_St_OFF_2 when true(s_St_OFF_1));
@@ -182,9 +182,9 @@ tel
 type spl = S1|S2|S3
 node police(eco : bool; confort : bool)
 returns (pl : int; s_2 : bool; s_1 : bool)
-var v_166 : bool; v_165 : bool; v_164 : bool; v_163 : bool; v_162 : bool;
-    v_161 : bool; v_160 : bool; v_159 : bool; v_158 : bool; v_157 : bool;
-    v_156 : int; v_155 : int; ns_St_1_CONFORT_2_0 : bool;
+var v_168 : bool; v_167 : bool; v_166 : bool; v_165 : bool; v_164 : bool;
+    v_163 : bool; v_162 : bool; v_161 : bool; v_160 : bool; v_159 : bool;
+    v_158 : int; v_157 : int; ns_St_1_CONFORT_2_0 : bool;
     ns_St_1_CONFORT_2_1 : bool; s_St_1_CONFORT_2_0 : bool;
     s_St_1_CONFORT_2_1 : bool; ns_St_1_ECO_2_0 : bool;
     ns_St_1_ECO_2_1 : bool; s_St_1_ECO_2_0 : bool; s_St_1_ECO_2_1 : bool;
@@ -201,8 +201,8 @@ var v_166 : bool; v_165 : bool; v_164 : bool; v_163 : bool; v_162 : bool;
     v_26_1 : bool; v_24_2_0 : bool; v_24_2_1 : bool; v_25 : bool;
     v_24_2 : bool; v_24_1 : bool; v_23 : bool; v_21_2_0 : bool;
     v_21_2_1 : bool; v_22 : bool; v_21_2 : bool; v_21_1 : bool; v : bool;
-    v_174 : bool; v_173 : bool; v_172 : bool; v_171 : bool; v_170 : bool;
-    v_169 : bool; v_168 : bool; v_167 : bool; s_3_St_1_CONFORT_2_0 : bool;
+    v_176 : bool; v_175 : bool; v_174 : bool; v_173 : bool; v_172 : bool;
+    v_171 : bool; v_170 : bool; v_169 : bool; s_3_St_1_CONFORT_2_0 : bool;
     s_3_St_1_CONFORT_2_1 : bool; s_3_St_1_ECO_2_0 : bool;
     s_3_St_1_ECO_2_1 : bool; s_3_St_1_MS_2_0 : bool; s_3_St_1_MS_2_1 : bool;
     ck_2_3_0 : bool; ck_2_3_1 : bool; r_St_1_CONFORT : bool;
@@ -234,42 +234,42 @@ let
   nr_St_1_CONFORT = false;
   ns_St_1_CONFORT_1 = true;
   ns_St_1_CONFORT_2 = true;
-  v_155 = merge ck_2_2_1 (true -> pl_St_1_CONFORT)(false -> pl_St_1_ECO);
-  v_156 =
+  v_157 = merge ck_2_2_1 (true -> pl_St_1_CONFORT)(false -> pl_St_1_ECO);
+  v_158 =
     merge ck_2_2_0
       (true -> ((0 when false(ck_2_1)) when true(ck_2_2_0)))
       (false -> pl_St_1_MS);
-  pl = merge ck_2_1 (true -> v_155)(false -> v_156);
-  v_157 = merge ck_2_2_1 (true -> s_St_1_CONFORT_1)(false -> s_St_1_ECO_1);
-  v_158 = merge ck_2_2_1 (true -> s_St_1_CONFORT_2)(false -> s_St_1_ECO_2);
-  v_159 =
+  pl = merge ck_2_1 (true -> v_157)(false -> v_158);
+  v_159 = merge ck_2_2_1 (true -> s_St_1_CONFORT_1)(false -> s_St_1_ECO_1);
+  v_160 = merge ck_2_2_1 (true -> s_St_1_CONFORT_2)(false -> s_St_1_ECO_2);
+  v_161 =
     merge ck_2_2_0
       (true -> ((true when false(ck_2_1)) when true(ck_2_2_0)))
       (false -> s_St_1_MS_1);
-  v_160 =
+  v_162 =
     merge ck_2_2_0
       (true -> ((true when false(ck_2_1)) when true(ck_2_2_0)))
       (false -> s_St_1_MS_2);
-  s_1 = merge ck_2_1 (true -> v_157)(false -> v_159);
-  s_2 = merge ck_2_1 (true -> v_158)(false -> v_160);
-  v_161 = merge ck_2_2_1 (true -> ns_St_1_CONFORT_1)(false -> ns_St_1_ECO_1);
-  v_162 = merge ck_2_2_1 (true -> ns_St_1_CONFORT_2)(false -> ns_St_1_ECO_2);
-  v_163 =
+  s_1 = merge ck_2_1 (true -> v_159)(false -> v_161);
+  s_2 = merge ck_2_1 (true -> v_160)(false -> v_162);
+  v_163 = merge ck_2_2_1 (true -> ns_St_1_CONFORT_1)(false -> ns_St_1_ECO_1);
+  v_164 = merge ck_2_2_1 (true -> ns_St_1_CONFORT_2)(false -> ns_St_1_ECO_2);
+  v_165 =
     merge ck_2_2_0
       (true -> ((true when false(ck_2_1)) when true(ck_2_2_0)))
       (false -> ns_St_1_MS_1);
-  v_164 =
-    merge ck_2_2_0
-      (true -> ((true when false(ck_2_1)) when true(ck_2_2_0)))
-      (false -> ns_St_1_MS_2);
-  ns_1 = merge ck_2_1 (true -> v_161)(false -> v_163);
-  ns_2 = merge ck_2_1 (true -> v_162)(false -> v_164);
-  v_165 = merge ck_2_2_1 (true -> nr_St_1_CONFORT)(false -> nr_St_1_ECO);
   v_166 =
     merge ck_2_2_0
       (true -> ((true when false(ck_2_1)) when true(ck_2_2_0)))
+      (false -> ns_St_1_MS_2);
+  ns_1 = merge ck_2_1 (true -> v_163)(false -> v_165);
+  ns_2 = merge ck_2_1 (true -> v_164)(false -> v_166);
+  v_167 = merge ck_2_2_1 (true -> nr_St_1_CONFORT)(false -> nr_St_1_ECO);
+  v_168 =
+    merge ck_2_2_0
+      (true -> ((true when false(ck_2_1)) when true(ck_2_2_0)))
       (false -> nr_St_1_MS);
-  nr = merge ck_2_1 (true -> v_165)(false -> v_166);
+  nr = merge ck_2_1 (true -> v_167)(false -> v_168);
   ck_2_2_1 = (ck_2_2 when true(ck_2_1));
   ck_2_2_0 = (ck_2_2 when false(ck_2_1));
   s_St_1_MS_2_1 = (s_St_1_MS_2 when true(s_St_1_MS_1));
@@ -284,10 +284,10 @@ let
   s_St_1_CONFORT_2_0 = (s_St_1_CONFORT_2 when false(s_St_1_CONFORT_1));
   ns_St_1_CONFORT_2_1 = (ns_St_1_CONFORT_2 when true(ns_St_1_CONFORT_1));
   ns_St_1_CONFORT_2_0 = (ns_St_1_CONFORT_2 when false(ns_St_1_CONFORT_1));
-  v_167 = false fby ns_1;
-  v_168 = false fby ns_2;
-  ck_1 = v_167;
-  ck_2_3 = v_168;
+  v_169 = false fby ns_1;
+  v_170 = false fby ns_2;
+  ck_1 = v_169;
+  ck_2_3 = v_170;
   r_St_1_MS =
     if ((eco when false(ck_1)) when false(ck_2_3_0)) then true else v_27;
   s_3_St_1_MS_1 =
@@ -331,26 +331,26 @@ let
   v = not(((confort when true(ck_1)) when true(ck_2_3_1)));
   v_21_2_1 = (v_21_2 when true(v_21_1));
   v_21_2_0 = (v_21_2 when false(v_21_1));
-  v_169 =
-    merge ck_2_3_1 (true -> s_3_St_1_CONFORT_1)(false -> s_3_St_1_ECO_1);
-  v_170 =
-    merge ck_2_3_1 (true -> s_3_St_1_CONFORT_2)(false -> s_3_St_1_ECO_2);
   v_171 =
+    merge ck_2_3_1 (true -> s_3_St_1_CONFORT_1)(false -> s_3_St_1_ECO_1);
+  v_172 =
+    merge ck_2_3_1 (true -> s_3_St_1_CONFORT_2)(false -> s_3_St_1_ECO_2);
+  v_173 =
     merge ck_2_3_0
       (true -> ((true when false(ck_1)) when true(ck_2_3_0)))
       (false -> s_3_St_1_MS_1);
-  v_172 =
-    merge ck_2_3_0
-      (true -> ((true when false(ck_1)) when true(ck_2_3_0)))
-      (false -> s_3_St_1_MS_2);
-  s_3_1 = merge ck_1 (true -> v_169)(false -> v_171);
-  s_3_2 = merge ck_1 (true -> v_170)(false -> v_172);
-  v_173 = merge ck_2_3_1 (true -> r_St_1_CONFORT)(false -> r_St_1_ECO);
   v_174 =
     merge ck_2_3_0
       (true -> ((true when false(ck_1)) when true(ck_2_3_0)))
+      (false -> s_3_St_1_MS_2);
+  s_3_1 = merge ck_1 (true -> v_171)(false -> v_173);
+  s_3_2 = merge ck_1 (true -> v_172)(false -> v_174);
+  v_175 = merge ck_2_3_1 (true -> r_St_1_CONFORT)(false -> r_St_1_ECO);
+  v_176 =
+    merge ck_2_3_0
+      (true -> ((true when false(ck_1)) when true(ck_2_3_0)))
       (false -> r_St_1_MS);
-  r = merge ck_1 (true -> v_173)(false -> v_174);
+  r = merge ck_1 (true -> v_175)(false -> v_176);
   ck_2_3_1 = (ck_2_3 when true(ck_1));
   ck_2_3_0 = (ck_2_3 when false(ck_1));
   s_3_St_1_MS_2_1 = (s_3_St_1_MS_2 when true(s_3_St_1_MS_1));
@@ -368,12 +368,12 @@ let
 tel
 
 node ws(s : bool; e : bool; c : bool) returns (power : int)
-var v_204 : bool; v_203 : bool; v_202 : bool; v_201 : bool; v_200 : bool;
-    v_199 : bool; v_198 : bool; v_197 : bool; v_196 : bool; v_195 : bool;
-    v_194 : bool; v_193 : bool; v_192 : bool; v_191 : bool; v_190 : bool;
-    v_189 : bool; v_188 : bool; v_187 : bool; v_186 : bool; v_185 : bool;
-    v_184 : bool; v_183 : bool; v_182 : bool; v_181 : bool; v_180 : int;
-    v_179 : int; v_178 : int; v_177 : int; v_176 : int; v_175 : int;
+var v_206 : bool; v_205 : bool; v_204 : bool; v_203 : bool; v_202 : bool;
+    v_201 : bool; v_200 : bool; v_199 : bool; v_198 : bool; v_197 : bool;
+    v_196 : bool; v_195 : bool; v_194 : bool; v_193 : bool; v_192 : bool;
+    v_191 : bool; v_190 : bool; v_189 : bool; v_188 : bool; v_187 : bool;
+    v_186 : bool; v_185 : bool; v_184 : bool; v_183 : bool; v_182 : int;
+    v_181 : int; v_180 : int; v_179 : int; v_178 : int; v_177 : int;
     ns_St_2_STANDBY_2_0 : bool; ns_St_2_STANDBY_3_0_0 : bool;
     ns_St_2_STANDBY_3_0_1 : bool; ns_St_2_STANDBY_2_1 : bool;
     ns_St_2_STANDBY_3_1_0 : bool; ns_St_2_STANDBY_3_1_1 : bool;
@@ -406,13 +406,13 @@ var v_204 : bool; v_203 : bool; v_202 : bool; v_201 : bool; v_200 : bool;
     ck_3_3 : bool; ck_3_2 : bool; ck_3_1 : bool; v_30_2_0 : bool;
     v_30_3_0_0 : bool; v_30_3_0_1 : bool; v_30_2_1 : bool; v_30_3_1_0 : bool;
     v_30_3_1_1 : bool; v_31 : bool; v_30_3 : bool; v_30_2 : bool;
-    v_30_1 : bool; v_29 : bool; v_28 : bool; v : bool; v_231 : bool;
-    v_230 : bool; v_229 : bool; v_228 : bool; v_227 : bool; v_226 : bool;
-    v_225 : bool; v_224 : bool; v_223 : bool; v_222 : bool; v_221 : bool;
-    v_220 : bool; v_219 : bool; v_218 : bool; v_217 : bool; v_216 : bool;
-    v_215 : bool; v_214 : bool; v_213 : bool; v_212 : bool; v_211 : bool;
-    v_210 : bool; v_209 : bool; v_208 : bool; v_207 : bool; v_206 : bool;
-    v_205 : bool; s_4_St_2_STANDBY_2_0 : bool; s_4_St_2_STANDBY_3_0_0 : bool;
+    v_30_1 : bool; v_29 : bool; v_28 : bool; v : bool; v_233 : bool;
+    v_232 : bool; v_231 : bool; v_230 : bool; v_229 : bool; v_228 : bool;
+    v_227 : bool; v_226 : bool; v_225 : bool; v_224 : bool; v_223 : bool;
+    v_222 : bool; v_221 : bool; v_220 : bool; v_219 : bool; v_218 : bool;
+    v_217 : bool; v_216 : bool; v_215 : bool; v_214 : bool; v_213 : bool;
+    v_212 : bool; v_211 : bool; v_210 : bool; v_209 : bool; v_208 : bool;
+    v_207 : bool; s_4_St_2_STANDBY_2_0 : bool; s_4_St_2_STANDBY_3_0_0 : bool;
     s_4_St_2_STANDBY_3_0_1 : bool; s_4_St_2_STANDBY_2_1 : bool;
     s_4_St_2_STANDBY_3_1_0 : bool; s_4_St_2_STANDBY_3_1_1 : bool;
     s_4_St_2_SPIN_2_0 : bool; s_4_St_2_SPIN_3_0_0 : bool;
@@ -481,96 +481,96 @@ let
   ns_St_2_STANDBY_1 = false;
   ns_St_2_STANDBY_2 = true;
   ns_St_2_STANDBY_3 = true;
-  v_175 =
+  v_177 =
     merge ck_3_3_1_1 (true -> power_St_2_OFF)(false -> power_St_2_RINSE);
-  v_176 =
+  v_178 =
     merge ck_3_3_1_0
       (true -> 
         (((0 when true(ck_3_1)) when false(ck_3_2_1)) when true(ck_3_3_1_0)))
       (false -> power_St_2_SPIN);
-  v_177 = merge ck_3_2_1 (true -> v_175)(false -> v_176);
-  v_178 =
+  v_179 = merge ck_3_2_1 (true -> v_177)(false -> v_178);
+  v_180 =
     merge ck_3_3_0_1
       (true -> power_St_2_STANDBY)(false -> power_St_2_WASHING);
-  v_179 =
+  v_181 =
     merge ck_3_3_0_0
       (true -> 
         (((0 when false(ck_3_1)) when false(ck_3_2_0)) when true(ck_3_3_0_0)))
       (false -> power_St_2_WF);
-  v_180 = merge ck_3_2_0 (true -> v_178)(false -> v_179);
-  power = merge ck_3_1 (true -> v_177)(false -> v_180);
-  v_181 = merge ck_3_3_1_1 (true -> ns_St_2_OFF_1)(false -> ns_St_2_RINSE_1);
-  v_182 = merge ck_3_3_1_1 (true -> ns_St_2_OFF_2)(false -> ns_St_2_RINSE_2);
-  v_183 = merge ck_3_3_1_1 (true -> ns_St_2_OFF_3)(false -> ns_St_2_RINSE_3);
-  v_184 =
-    merge ck_3_3_1_0
-      (true -> 
-        (((true when true(ck_3_1)) when false(ck_3_2_1))
-          when true(ck_3_3_1_0)))
-      (false -> ns_St_2_SPIN_1);
-  v_185 =
-    merge ck_3_3_1_0
-      (true -> 
-        (((true when true(ck_3_1)) when false(ck_3_2_1))
-          when true(ck_3_3_1_0)))
-      (false -> ns_St_2_SPIN_2);
+  v_182 = merge ck_3_2_0 (true -> v_180)(false -> v_181);
+  power = merge ck_3_1 (true -> v_179)(false -> v_182);
+  v_183 = merge ck_3_3_1_1 (true -> ns_St_2_OFF_1)(false -> ns_St_2_RINSE_1);
+  v_184 = merge ck_3_3_1_1 (true -> ns_St_2_OFF_2)(false -> ns_St_2_RINSE_2);
+  v_185 = merge ck_3_3_1_1 (true -> ns_St_2_OFF_3)(false -> ns_St_2_RINSE_3);
   v_186 =
     merge ck_3_3_1_0
       (true -> 
         (((true when true(ck_3_1)) when false(ck_3_2_1))
           when true(ck_3_3_1_0)))
-      (false -> ns_St_2_SPIN_3);
+      (false -> ns_St_2_SPIN_1);
   v_187 =
-    merge ck_3_3_0_1 (true -> ns_St_2_STANDBY_1)(false -> ns_St_2_WASHING_1);
+    merge ck_3_3_1_0
+      (true -> 
+        (((true when true(ck_3_1)) when false(ck_3_2_1))
+          when true(ck_3_3_1_0)))
+      (false -> ns_St_2_SPIN_2);
   v_188 =
-    merge ck_3_3_0_1 (true -> ns_St_2_STANDBY_2)(false -> ns_St_2_WASHING_2);
+    merge ck_3_3_1_0
+      (true -> 
+        (((true when true(ck_3_1)) when false(ck_3_2_1))
+          when true(ck_3_3_1_0)))
+      (false -> ns_St_2_SPIN_3);
   v_189 =
-    merge ck_3_3_0_1 (true -> ns_St_2_STANDBY_3)(false -> ns_St_2_WASHING_3);
+    merge ck_3_3_0_1 (true -> ns_St_2_STANDBY_1)(false -> ns_St_2_WASHING_1);
   v_190 =
-    merge ck_3_3_0_0
-      (true -> 
-        (((true when false(ck_3_1)) when false(ck_3_2_0))
-          when true(ck_3_3_0_0)))
-      (false -> ns_St_2_WF_1);
+    merge ck_3_3_0_1 (true -> ns_St_2_STANDBY_2)(false -> ns_St_2_WASHING_2);
   v_191 =
-    merge ck_3_3_0_0
-      (true -> 
-        (((true when false(ck_3_1)) when false(ck_3_2_0))
-          when true(ck_3_3_0_0)))
-      (false -> ns_St_2_WF_2);
+    merge ck_3_3_0_1 (true -> ns_St_2_STANDBY_3)(false -> ns_St_2_WASHING_3);
   v_192 =
     merge ck_3_3_0_0
       (true -> 
         (((true when false(ck_3_1)) when false(ck_3_2_0))
           when true(ck_3_3_0_0)))
+      (false -> ns_St_2_WF_1);
+  v_193 =
+    merge ck_3_3_0_0
+      (true -> 
+        (((true when false(ck_3_1)) when false(ck_3_2_0))
+          when true(ck_3_3_0_0)))
+      (false -> ns_St_2_WF_2);
+  v_194 =
+    merge ck_3_3_0_0
+      (true -> 
+        (((true when false(ck_3_1)) when false(ck_3_2_0))
+          when true(ck_3_3_0_0)))
       (false -> ns_St_2_WF_3);
-  v_193 = merge ck_3_2_1 (true -> v_181)(false -> v_184);
-  v_194 = merge ck_3_2_1 (true -> v_182)(false -> v_185);
   v_195 = merge ck_3_2_1 (true -> v_183)(false -> v_186);
-  v_196 = merge ck_3_2_0 (true -> v_187)(false -> v_190);
-  v_197 = merge ck_3_2_0 (true -> v_188)(false -> v_191);
+  v_196 = merge ck_3_2_1 (true -> v_184)(false -> v_187);
+  v_197 = merge ck_3_2_1 (true -> v_185)(false -> v_188);
   v_198 = merge ck_3_2_0 (true -> v_189)(false -> v_192);
-  ns_1 = merge ck_3_1 (true -> v_193)(false -> v_196);
-  ns_2 = merge ck_3_1 (true -> v_194)(false -> v_197);
-  ns_3 = merge ck_3_1 (true -> v_195)(false -> v_198);
-  v_199 = merge ck_3_3_1_1 (true -> nr_St_2_OFF)(false -> nr_St_2_RINSE);
-  v_200 =
+  v_199 = merge ck_3_2_0 (true -> v_190)(false -> v_193);
+  v_200 = merge ck_3_2_0 (true -> v_191)(false -> v_194);
+  ns_1 = merge ck_3_1 (true -> v_195)(false -> v_198);
+  ns_2 = merge ck_3_1 (true -> v_196)(false -> v_199);
+  ns_3 = merge ck_3_1 (true -> v_197)(false -> v_200);
+  v_201 = merge ck_3_3_1_1 (true -> nr_St_2_OFF)(false -> nr_St_2_RINSE);
+  v_202 =
     merge ck_3_3_1_0
       (true -> 
         (((true when true(ck_3_1)) when false(ck_3_2_1))
           when true(ck_3_3_1_0)))
       (false -> nr_St_2_SPIN);
-  v_201 = merge ck_3_2_1 (true -> v_199)(false -> v_200);
-  v_202 =
+  v_203 = merge ck_3_2_1 (true -> v_201)(false -> v_202);
+  v_204 =
     merge ck_3_3_0_1 (true -> nr_St_2_STANDBY)(false -> nr_St_2_WASHING);
-  v_203 =
+  v_205 =
     merge ck_3_3_0_0
       (true -> 
         (((true when false(ck_3_1)) when false(ck_3_2_0))
           when true(ck_3_3_0_0)))
       (false -> nr_St_2_WF);
-  v_204 = merge ck_3_2_0 (true -> v_202)(false -> v_203);
-  nr = merge ck_3_1 (true -> v_201)(false -> v_204);
+  v_206 = merge ck_3_2_0 (true -> v_204)(false -> v_205);
+  nr = merge ck_3_1 (true -> v_203)(false -> v_206);
   ck_3_3_1_1 = ((ck_3_3 when true(ck_3_1)) when true(ck_3_2_1));
   ck_3_3_1_0 = ((ck_3_3 when true(ck_3_1)) when false(ck_3_2_1));
   ck_3_2_1 = (ck_3_2 when true(ck_3_1));
@@ -650,12 +650,12 @@ let
     ((ns_St_2_STANDBY_3 when false(ns_St_2_STANDBY_1))
       when false(ns_St_2_STANDBY_2_0));
   ns_St_2_STANDBY_2_0 = (ns_St_2_STANDBY_2 when false(ns_St_2_STANDBY_1));
-  v_205 = true fby ns_1;
-  v_206 = true fby ns_2;
-  v_207 = true fby ns_3;
-  ck_1 = v_205;
-  ck_2 = v_206;
-  ck_3_4 = v_207;
+  v_207 = true fby ns_1;
+  v_208 = true fby ns_2;
+  v_209 = true fby ns_3;
+  ck_1 = v_207;
+  ck_2 = v_208;
+  ck_3_4 = v_209;
   r_St_2_OFF =
     if (((s when true(ck_1)) when true(ck_2_1)) when true(ck_3_4_1_1))
     then true
@@ -761,75 +761,75 @@ let
     if (((c when false(ck_1)) when true(ck_2_0)) when true(ck_3_4_0_1))
     then false
     else true;
-  v_208 =
-    merge ck_3_4_1_1 (true -> s_4_St_2_OFF_1)(false -> s_4_St_2_RINSE_1);
-  v_209 =
-    merge ck_3_4_1_1 (true -> s_4_St_2_OFF_2)(false -> s_4_St_2_RINSE_2);
   v_210 =
-    merge ck_3_4_1_1 (true -> s_4_St_2_OFF_3)(false -> s_4_St_2_RINSE_3);
+    merge ck_3_4_1_1 (true -> s_4_St_2_OFF_1)(false -> s_4_St_2_RINSE_1);
   v_211 =
-    merge ck_3_4_1_0
-      (true -> 
-        (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_4_1_0)))
-      (false -> s_4_St_2_SPIN_1);
+    merge ck_3_4_1_1 (true -> s_4_St_2_OFF_2)(false -> s_4_St_2_RINSE_2);
   v_212 =
-    merge ck_3_4_1_0
-      (true -> 
-        (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_4_1_0)))
-      (false -> s_4_St_2_SPIN_2);
+    merge ck_3_4_1_1 (true -> s_4_St_2_OFF_3)(false -> s_4_St_2_RINSE_3);
   v_213 =
     merge ck_3_4_1_0
       (true -> 
         (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_4_1_0)))
-      (false -> s_4_St_2_SPIN_3);
+      (false -> s_4_St_2_SPIN_1);
   v_214 =
-    merge ck_3_4_0_1
-      (true -> s_4_St_2_STANDBY_1)(false -> s_4_St_2_WASHING_1);
+    merge ck_3_4_1_0
+      (true -> 
+        (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_4_1_0)))
+      (false -> s_4_St_2_SPIN_2);
   v_215 =
-    merge ck_3_4_0_1
-      (true -> s_4_St_2_STANDBY_2)(false -> s_4_St_2_WASHING_2);
+    merge ck_3_4_1_0
+      (true -> 
+        (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_4_1_0)))
+      (false -> s_4_St_2_SPIN_3);
   v_216 =
     merge ck_3_4_0_1
-      (true -> s_4_St_2_STANDBY_3)(false -> s_4_St_2_WASHING_3);
+      (true -> s_4_St_2_STANDBY_1)(false -> s_4_St_2_WASHING_1);
   v_217 =
-    merge ck_3_4_0_0
-      (true -> 
-        (((true when false(ck_1)) when false(ck_2_0)) when true(ck_3_4_0_0)))
-      (false -> s_4_St_2_WF_1);
+    merge ck_3_4_0_1
+      (true -> s_4_St_2_STANDBY_2)(false -> s_4_St_2_WASHING_2);
   v_218 =
-    merge ck_3_4_0_0
-      (true -> 
-        (((true when false(ck_1)) when false(ck_2_0)) when true(ck_3_4_0_0)))
-      (false -> s_4_St_2_WF_2);
+    merge ck_3_4_0_1
+      (true -> s_4_St_2_STANDBY_3)(false -> s_4_St_2_WASHING_3);
   v_219 =
     merge ck_3_4_0_0
       (true -> 
         (((true when false(ck_1)) when false(ck_2_0)) when true(ck_3_4_0_0)))
+      (false -> s_4_St_2_WF_1);
+  v_220 =
+    merge ck_3_4_0_0
+      (true -> 
+        (((true when false(ck_1)) when false(ck_2_0)) when true(ck_3_4_0_0)))
+      (false -> s_4_St_2_WF_2);
+  v_221 =
+    merge ck_3_4_0_0
+      (true -> 
+        (((true when false(ck_1)) when false(ck_2_0)) when true(ck_3_4_0_0)))
       (false -> s_4_St_2_WF_3);
-  v_220 = merge ck_2_1 (true -> v_208)(false -> v_211);
-  v_221 = merge ck_2_1 (true -> v_209)(false -> v_212);
   v_222 = merge ck_2_1 (true -> v_210)(false -> v_213);
-  v_223 = merge ck_2_0 (true -> v_214)(false -> v_217);
-  v_224 = merge ck_2_0 (true -> v_215)(false -> v_218);
+  v_223 = merge ck_2_1 (true -> v_211)(false -> v_214);
+  v_224 = merge ck_2_1 (true -> v_212)(false -> v_215);
   v_225 = merge ck_2_0 (true -> v_216)(false -> v_219);
-  s_4_1 = merge ck_1 (true -> v_220)(false -> v_223);
-  s_4_2 = merge ck_1 (true -> v_221)(false -> v_224);
-  s_4_3 = merge ck_1 (true -> v_222)(false -> v_225);
-  v_226 = merge ck_3_4_1_1 (true -> r_St_2_OFF)(false -> r_St_2_RINSE);
-  v_227 =
+  v_226 = merge ck_2_0 (true -> v_217)(false -> v_220);
+  v_227 = merge ck_2_0 (true -> v_218)(false -> v_221);
+  s_4_1 = merge ck_1 (true -> v_222)(false -> v_225);
+  s_4_2 = merge ck_1 (true -> v_223)(false -> v_226);
+  s_4_3 = merge ck_1 (true -> v_224)(false -> v_227);
+  v_228 = merge ck_3_4_1_1 (true -> r_St_2_OFF)(false -> r_St_2_RINSE);
+  v_229 =
     merge ck_3_4_1_0
       (true -> 
         (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_4_1_0)))
       (false -> r_St_2_SPIN);
-  v_228 = merge ck_2_1 (true -> v_226)(false -> v_227);
-  v_229 = merge ck_3_4_0_1 (true -> r_St_2_STANDBY)(false -> r_St_2_WASHING);
-  v_230 =
+  v_230 = merge ck_2_1 (true -> v_228)(false -> v_229);
+  v_231 = merge ck_3_4_0_1 (true -> r_St_2_STANDBY)(false -> r_St_2_WASHING);
+  v_232 =
     merge ck_3_4_0_0
       (true -> 
         (((true when false(ck_1)) when false(ck_2_0)) when true(ck_3_4_0_0)))
       (false -> r_St_2_WF);
-  v_231 = merge ck_2_0 (true -> v_229)(false -> v_230);
-  r = merge ck_1 (true -> v_228)(false -> v_231);
+  v_233 = merge ck_2_0 (true -> v_231)(false -> v_232);
+  r = merge ck_1 (true -> v_230)(false -> v_233);
   ck_3_4_1_1 = ((ck_3_4 when true(ck_1)) when true(ck_2_1));
   ck_3_4_1_0 = ((ck_3_4 when true(ck_1)) when false(ck_2_1));
   ck_2_1 = (ck_2 when true(ck_1));
@@ -929,11 +929,11 @@ tel
 
 node oven(finish : bool; start : bool; cold : bool; temp_ok : bool; c : bool)
 returns (power : int)
-var v_256 : bool; v_255 : bool; v_254 : bool; v_253 : bool; v_252 : bool;
-    v_251 : bool; v_250 : bool; v_249 : bool; v_248 : bool; v_247 : bool;
-    v_246 : bool; v_245 : bool; v_244 : bool; v_243 : bool; v_242 : bool;
-    v_241 : bool; v_240 : bool; v_239 : bool; v_238 : bool; v_237 : bool;
-    v_236 : int; v_235 : int; v_234 : int; v_233 : int; v_232 : int;
+var v_258 : bool; v_257 : bool; v_256 : bool; v_255 : bool; v_254 : bool;
+    v_253 : bool; v_252 : bool; v_251 : bool; v_250 : bool; v_249 : bool;
+    v_248 : bool; v_247 : bool; v_246 : bool; v_245 : bool; v_244 : bool;
+    v_243 : bool; v_242 : bool; v_241 : bool; v_240 : bool; v_239 : bool;
+    v_238 : int; v_237 : int; v_236 : int; v_235 : int; v_234 : int;
     ns_St_3_REHEAT_2_0 : bool; ns_St_3_REHEAT_3_0_0 : bool;
     ns_St_3_REHEAT_3_0_1 : bool; ns_St_3_REHEAT_2_1 : bool;
     ns_St_3_REHEAT_3_1_0 : bool; ns_St_3_REHEAT_3_1_1 : bool;
@@ -971,11 +971,11 @@ var v_256 : bool; v_255 : bool; v_254 : bool; v_253 : bool; v_252 : bool;
     v_34_3_1_1 : bool; v_35 : bool; v_34_3 : bool; v_34_2 : bool;
     v_34_1 : bool; v_33 : bool; v_2_0 : bool; v_3_0_0 : bool; v_3_0_1 : bool;
     v_2_1 : bool; v_3_1_0 : bool; v_3_1_1 : bool; v_32 : bool; v_3 : bool;
-    v_2 : bool; v_1 : bool; v_279 : bool; v_278 : bool; v_277 : bool;
-    v_276 : bool; v_275 : bool; v_274 : bool; v_273 : bool; v_272 : bool;
-    v_271 : bool; v_270 : bool; v_269 : bool; v_268 : bool; v_267 : bool;
-    v_266 : bool; v_265 : bool; v_264 : bool; v_263 : bool; v_262 : bool;
-    v_261 : bool; v_260 : bool; v_259 : bool; v_258 : bool; v_257 : bool;
+    v_2 : bool; v_1 : bool; v_281 : bool; v_280 : bool; v_279 : bool;
+    v_278 : bool; v_277 : bool; v_276 : bool; v_275 : bool; v_274 : bool;
+    v_273 : bool; v_272 : bool; v_271 : bool; v_270 : bool; v_269 : bool;
+    v_268 : bool; v_267 : bool; v_266 : bool; v_265 : bool; v_264 : bool;
+    v_263 : bool; v_262 : bool; v_261 : bool; v_260 : bool; v_259 : bool;
     s_St_3_REHEAT_2_0 : bool; s_St_3_REHEAT_3_0_0 : bool;
     s_St_3_REHEAT_3_0_1 : bool; s_St_3_REHEAT_2_1 : bool;
     s_St_3_REHEAT_3_1_0 : bool; s_St_3_REHEAT_3_1_1 : bool;
@@ -1034,82 +1034,82 @@ let
   ns_St_3_REHEAT_1 = false;
   ns_St_3_REHEAT_2 = false;
   ns_St_3_REHEAT_3 = true;
-  v_232 =
+  v_234 =
     merge ck_4_3_1_1 (true -> power_St_3_HEAT)(false -> power_St_3_MAINTAIN);
-  v_233 =
+  v_235 =
     merge ck_4_3_1_0
       (true -> 
         (((0 when true(ck_4_1)) when false(ck_4_2_1)) when true(ck_4_3_1_0)))
       (false -> power_St_3_OFF);
-  v_234 = merge ck_4_2_1 (true -> v_232)(false -> v_233);
-  v_235 =
-    merge ck_4_3_0_0 (true -> power_St_3_REHEAT)(false -> power_St_3_STANDBY);
-  v_236 =
-    merge ck_4_2_0
-      (true -> ((0 when false(ck_4_1)) when true(ck_4_2_0)))(false -> v_235);
-  power = merge ck_4_1 (true -> v_234)(false -> v_236);
+  v_236 = merge ck_4_2_1 (true -> v_234)(false -> v_235);
   v_237 =
-    merge ck_4_3_1_1 (true -> ns_St_3_HEAT_1)(false -> ns_St_3_MAINTAIN_1);
+    merge ck_4_3_0_0 (true -> power_St_3_REHEAT)(false -> power_St_3_STANDBY);
   v_238 =
-    merge ck_4_3_1_1 (true -> ns_St_3_HEAT_2)(false -> ns_St_3_MAINTAIN_2);
+    merge ck_4_2_0
+      (true -> ((0 when false(ck_4_1)) when true(ck_4_2_0)))(false -> v_237);
+  power = merge ck_4_1 (true -> v_236)(false -> v_238);
   v_239 =
-    merge ck_4_3_1_1 (true -> ns_St_3_HEAT_3)(false -> ns_St_3_MAINTAIN_3);
+    merge ck_4_3_1_1 (true -> ns_St_3_HEAT_1)(false -> ns_St_3_MAINTAIN_1);
   v_240 =
-    merge ck_4_3_1_0
-      (true -> 
-        (((true when true(ck_4_1)) when false(ck_4_2_1))
-          when true(ck_4_3_1_0)))
-      (false -> ns_St_3_OFF_1);
+    merge ck_4_3_1_1 (true -> ns_St_3_HEAT_2)(false -> ns_St_3_MAINTAIN_2);
   v_241 =
-    merge ck_4_3_1_0
-      (true -> 
-        (((true when true(ck_4_1)) when false(ck_4_2_1))
-          when true(ck_4_3_1_0)))
-      (false -> ns_St_3_OFF_2);
+    merge ck_4_3_1_1 (true -> ns_St_3_HEAT_3)(false -> ns_St_3_MAINTAIN_3);
   v_242 =
     merge ck_4_3_1_0
       (true -> 
         (((true when true(ck_4_1)) when false(ck_4_2_1))
           when true(ck_4_3_1_0)))
-      (false -> ns_St_3_OFF_3);
+      (false -> ns_St_3_OFF_1);
   v_243 =
-    merge ck_4_3_0_0 (true -> ns_St_3_REHEAT_1)(false -> ns_St_3_STANDBY_1);
+    merge ck_4_3_1_0
+      (true -> 
+        (((true when true(ck_4_1)) when false(ck_4_2_1))
+          when true(ck_4_3_1_0)))
+      (false -> ns_St_3_OFF_2);
   v_244 =
-    merge ck_4_3_0_0 (true -> ns_St_3_REHEAT_2)(false -> ns_St_3_STANDBY_2);
+    merge ck_4_3_1_0
+      (true -> 
+        (((true when true(ck_4_1)) when false(ck_4_2_1))
+          when true(ck_4_3_1_0)))
+      (false -> ns_St_3_OFF_3);
   v_245 =
+    merge ck_4_3_0_0 (true -> ns_St_3_REHEAT_1)(false -> ns_St_3_STANDBY_1);
+  v_246 =
+    merge ck_4_3_0_0 (true -> ns_St_3_REHEAT_2)(false -> ns_St_3_STANDBY_2);
+  v_247 =
     merge ck_4_3_0_0 (true -> ns_St_3_REHEAT_3)(false -> ns_St_3_STANDBY_3);
-  v_246 = merge ck_4_2_1 (true -> v_237)(false -> v_240);
-  v_247 = merge ck_4_2_1 (true -> v_238)(false -> v_241);
   v_248 = merge ck_4_2_1 (true -> v_239)(false -> v_242);
-  v_249 =
-    merge ck_4_2_0
-      (true -> ((true when false(ck_4_1)) when true(ck_4_2_0)))
-      (false -> v_243);
-  v_250 =
-    merge ck_4_2_0
-      (true -> ((true when false(ck_4_1)) when true(ck_4_2_0)))
-      (false -> v_244);
+  v_249 = merge ck_4_2_1 (true -> v_240)(false -> v_243);
+  v_250 = merge ck_4_2_1 (true -> v_241)(false -> v_244);
   v_251 =
     merge ck_4_2_0
       (true -> ((true when false(ck_4_1)) when true(ck_4_2_0)))
       (false -> v_245);
-  ns_1 = merge ck_4_1 (true -> v_246)(false -> v_249);
-  ns_2 = merge ck_4_1 (true -> v_247)(false -> v_250);
-  ns_3 = merge ck_4_1 (true -> v_248)(false -> v_251);
-  v_252 = merge ck_4_3_1_1 (true -> nr_St_3_HEAT)(false -> nr_St_3_MAINTAIN);
+  v_252 =
+    merge ck_4_2_0
+      (true -> ((true when false(ck_4_1)) when true(ck_4_2_0)))
+      (false -> v_246);
   v_253 =
+    merge ck_4_2_0
+      (true -> ((true when false(ck_4_1)) when true(ck_4_2_0)))
+      (false -> v_247);
+  ns_1 = merge ck_4_1 (true -> v_248)(false -> v_251);
+  ns_2 = merge ck_4_1 (true -> v_249)(false -> v_252);
+  ns_3 = merge ck_4_1 (true -> v_250)(false -> v_253);
+  v_254 = merge ck_4_3_1_1 (true -> nr_St_3_HEAT)(false -> nr_St_3_MAINTAIN);
+  v_255 =
     merge ck_4_3_1_0
       (true -> 
         (((true when true(ck_4_1)) when false(ck_4_2_1))
           when true(ck_4_3_1_0)))
       (false -> nr_St_3_OFF);
-  v_254 = merge ck_4_2_1 (true -> v_252)(false -> v_253);
-  v_255 = merge ck_4_3_0_0 (true -> nr_St_3_REHEAT)(false -> nr_St_3_STANDBY);
-  v_256 =
+  v_256 = merge ck_4_2_1 (true -> v_254)(false -> v_255);
+  v_257 = merge ck_4_3_0_0 (true -> nr_St_3_REHEAT)(false -> nr_St_3_STANDBY);
+  v_258 =
     merge ck_4_2_0
       (true -> ((true when false(ck_4_1)) when true(ck_4_2_0)))
-      (false -> v_255);
-  nr = merge ck_4_1 (true -> v_254)(false -> v_256);
+      (false -> v_257);
+  nr = merge ck_4_1 (true -> v_256)(false -> v_258);
   ck_4_3_1_1 = ((ck_4_3 when true(ck_4_1)) when true(ck_4_2_1));
   ck_4_3_1_0 = ((ck_4_3 when true(ck_4_1)) when false(ck_4_2_1));
   ck_4_2_1 = (ck_4_2 when true(ck_4_1));
@@ -1179,12 +1179,12 @@ let
     ((ns_St_3_REHEAT_3 when false(ns_St_3_REHEAT_1))
       when false(ns_St_3_REHEAT_2_0));
   ns_St_3_REHEAT_2_0 = (ns_St_3_REHEAT_2 when false(ns_St_3_REHEAT_1));
-  v_257 = true fby ns_1;
-  v_258 = false fby ns_2;
-  v_259 = false fby ns_3;
-  ck_1 = v_257;
-  ck_2 = v_258;
-  ck_3 = v_259;
+  v_259 = true fby ns_1;
+  v_260 = false fby ns_2;
+  v_261 = false fby ns_3;
+  ck_1 = v_259;
+  ck_2 = v_260;
+  ck_3 = v_261;
   r_St_3_OFF = if v_39 then true else v_42;
   s_St_3_OFF_1 = if v_39 then false else v_41_1;
   s_St_3_OFF_2 = if v_39 then false else v_41_2;
@@ -1330,54 +1330,54 @@ let
   v_3_0_1 = ((v_3 when false(v_1)) when true(v_2_0));
   v_3_0_0 = ((v_3 when false(v_1)) when false(v_2_0));
   v_2_0 = (v_2 when false(v_1));
-  v_260 = merge ck_3_1_1 (true -> s_St_3_HEAT_1)(false -> s_St_3_MAINTAIN_1);
-  v_261 = merge ck_3_1_1 (true -> s_St_3_HEAT_2)(false -> s_St_3_MAINTAIN_2);
-  v_262 = merge ck_3_1_1 (true -> s_St_3_HEAT_3)(false -> s_St_3_MAINTAIN_3);
-  v_263 =
-    merge ck_3_1_0
-      (true -> 
-        (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
-      (false -> s_St_3_OFF_1);
-  v_264 =
-    merge ck_3_1_0
-      (true -> 
-        (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
-      (false -> s_St_3_OFF_2);
+  v_262 = merge ck_3_1_1 (true -> s_St_3_HEAT_1)(false -> s_St_3_MAINTAIN_1);
+  v_263 = merge ck_3_1_1 (true -> s_St_3_HEAT_2)(false -> s_St_3_MAINTAIN_2);
+  v_264 = merge ck_3_1_1 (true -> s_St_3_HEAT_3)(false -> s_St_3_MAINTAIN_3);
   v_265 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
+      (false -> s_St_3_OFF_1);
+  v_266 =
+    merge ck_3_1_0
+      (true -> 
+        (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
+      (false -> s_St_3_OFF_2);
+  v_267 =
+    merge ck_3_1_0
+      (true -> 
+        (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
       (false -> s_St_3_OFF_3);
-  v_266 = merge ck_3_0_0 (true -> s_St_3_REHEAT_1)(false -> s_St_3_STANDBY_1);
-  v_267 = merge ck_3_0_0 (true -> s_St_3_REHEAT_2)(false -> s_St_3_STANDBY_2);
-  v_268 = merge ck_3_0_0 (true -> s_St_3_REHEAT_3)(false -> s_St_3_STANDBY_3);
-  v_269 = merge ck_2_1 (true -> v_260)(false -> v_263);
-  v_270 = merge ck_2_1 (true -> v_261)(false -> v_264);
+  v_268 = merge ck_3_0_0 (true -> s_St_3_REHEAT_1)(false -> s_St_3_STANDBY_1);
+  v_269 = merge ck_3_0_0 (true -> s_St_3_REHEAT_2)(false -> s_St_3_STANDBY_2);
+  v_270 = merge ck_3_0_0 (true -> s_St_3_REHEAT_3)(false -> s_St_3_STANDBY_3);
   v_271 = merge ck_2_1 (true -> v_262)(false -> v_265);
-  v_272 =
-    merge ck_2_0
-      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_266);
-  v_273 =
-    merge ck_2_0
-      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_267);
+  v_272 = merge ck_2_1 (true -> v_263)(false -> v_266);
+  v_273 = merge ck_2_1 (true -> v_264)(false -> v_267);
   v_274 =
     merge ck_2_0
       (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_268);
-  s_1 = merge ck_1 (true -> v_269)(false -> v_272);
-  s_2 = merge ck_1 (true -> v_270)(false -> v_273);
-  s_3 = merge ck_1 (true -> v_271)(false -> v_274);
-  v_275 = merge ck_3_1_1 (true -> r_St_3_HEAT)(false -> r_St_3_MAINTAIN);
+  v_275 =
+    merge ck_2_0
+      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_269);
   v_276 =
+    merge ck_2_0
+      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_270);
+  s_1 = merge ck_1 (true -> v_271)(false -> v_274);
+  s_2 = merge ck_1 (true -> v_272)(false -> v_275);
+  s_3 = merge ck_1 (true -> v_273)(false -> v_276);
+  v_277 = merge ck_3_1_1 (true -> r_St_3_HEAT)(false -> r_St_3_MAINTAIN);
+  v_278 =
     merge ck_3_1_0
       (true -> 
         (((true when true(ck_1)) when false(ck_2_1)) when true(ck_3_1_0)))
       (false -> r_St_3_OFF);
-  v_277 = merge ck_2_1 (true -> v_275)(false -> v_276);
-  v_278 = merge ck_3_0_0 (true -> r_St_3_REHEAT)(false -> r_St_3_STANDBY);
-  v_279 =
+  v_279 = merge ck_2_1 (true -> v_277)(false -> v_278);
+  v_280 = merge ck_3_0_0 (true -> r_St_3_REHEAT)(false -> r_St_3_STANDBY);
+  v_281 =
     merge ck_2_0
-      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_278);
-  r = merge ck_1 (true -> v_277)(false -> v_279);
+      (true -> ((true when false(ck_1)) when true(ck_2_0)))(false -> v_280);
+  r = merge ck_1 (true -> v_279)(false -> v_281);
   ck_3_1_1 = ((ck_3 when true(ck_1)) when true(ck_2_1));
   ck_3_1_0 = ((ck_3 when true(ck_1)) when false(ck_2_1));
   ck_2_1 = (ck_2 when true(ck_1));
@@ -1601,21 +1601,22 @@ returns (pl : int; p1 : int; p2 : int; p3 : int; ss : int; sp_2 : bool;
           door_open : bool; window_open : bool)
 contract
   var v : int; v_52 : int; v_53 : int; v_54 : int; v_55 : int; v_56 : int;
-      v_281 : bool; v_280 : bool; ck_1 : bool; ck_2 : bool; rule5_S1 : bool;
+      v_283 : bool; v_282 : bool; ck_1 : bool; ck_2 : bool; rule5_S1 : bool;
       rule5_S2 : bool; rule5_S3 : bool; ck_2_1 : bool; ck_2_0 : bool;
       rule5 : bool; rule4 : bool; rule3 : bool; rule2 : bool; rule1 : bool;
       v_57 : bool; v_58 : bool; v_59 : bool; v_60 : bool; v_61 : bool;
       v_62 : bool; v_63 : bool; v_64 : bool; v_65 : bool; v_66 : bool;
       v_67 : bool; v_68 : bool; v_69 : bool; v_70 : bool; v_71 : bool;
+      v_72 : bool; v_73 : bool;
   let
     ck_2_0 = (ck_2 when false(ck_1));
     ck_2_1 = (ck_2 when true(ck_1));
-    v_280 =
+    v_282 =
       merge ck_2_0
         (false -> rule5_S1)
         (true -> ((true when false(ck_1)) when true(ck_2_0)));
-    v_281 = merge ck_2_1 (false -> rule5_S2)(true -> rule5_S3);
-    rule5 = merge ck_1 (false -> v_280)(true -> v_281);
+    v_283 = merge ck_2_1 (false -> rule5_S2)(true -> rule5_S3);
+    rule5 = merge ck_1 (false -> v_282)(true -> v_283);
     v =
       (((p1 when true(ck_1)) when true(ck_2_1)) +
        ((p2 when true(ck_1)) when true(ck_2_1)));
@@ -1650,10 +1651,12 @@ contract
     v_68 = not(room_oc);
     v_69 = (lamp_on or tv_on);
     rule1 = (v_68 or v_69);
-    v_70 = (rule5 & rule1);
-    v_71 = (v_70 & rule4)
+    v_70 = (rule1 & rule2);
+    v_71 = (v_70 & rule3);
+    v_72 = (v_71 & rule4);
+    v_73 = (v_72 & rule5)
   tel
-  assume true@ enforce v_71]
+  assume true@ enforce v_73]
                  with (c_window : bool; c_door : bool; c_tv1 : bool;
                         c_tv2 : bool; c_lamp2 : bool; c_lamp1 : bool;
                         c4 : bool; c3 : bool; c2 : bool; c1 : bool)
@@ -1661,44 +1664,44 @@ contract
                      window_open_1_St_8_Open : bool; nr_St_8_Closed : bool;
                      ns_St_8_Closed_1 : bool;
                      window_open_1_St_8_Closed : bool; ck_26_1 : bool;
-                     v_136 : bool; v_135 : bool; v_134 : bool;
+                     v_138 : bool; v_137 : bool; v_136 : bool;
                      r_St_8_Open : bool; s_5_St_8_Open_1 : bool;
                      r_St_8_Closed : bool; s_5_St_8_Closed_1 : bool;
                      ck_25_1 : bool; nr_1_St_9_Open : bool;
                      ns_1_St_9_Open_1 : bool; door_open_1_St_9_Open : bool;
                      nr_1_St_9_Closed : bool; ns_1_St_9_Closed_1 : bool;
                      door_open_1_St_9_Closed : bool; ck_24_1 : bool;
-                     v_133 : bool; v_132 : bool; v_131 : bool;
+                     v_135 : bool; v_134 : bool; v_133 : bool;
                      r_1_St_9_Open : bool; s_6_St_9_Open_1 : bool;
                      r_1_St_9_Closed : bool; s_6_St_9_Closed_1 : bool;
                      ck_23_1 : bool; nr_2_St_10_Ocupied : bool;
                      ns_2_St_10_Ocupied_1 : bool;
                      room_oc_1_St_10_Ocupied : bool; nr_2_St_10_Empty : bool;
                      ns_2_St_10_Empty_1 : bool; room_oc_1_St_10_Empty : bool;
-                     ck_22_1 : bool; v_130 : bool; r_2_St_10_Ocupied : bool;
+                     ck_22_1 : bool; v_132 : bool; r_2_St_10_Ocupied : bool;
                      s_7_St_10_Ocupied_1 : bool; r_2_St_10_Empty : bool;
                      s_7_St_10_Empty_1 : bool; ck_21_1 : bool;
                      nr_3_St_11_On : bool; ns_3_St_11_On_1 : bool;
                      luz_on_1_St_11_On : bool; nr_3_St_11_Off : bool;
                      ns_3_St_11_Off_1 : bool; luz_on_1_St_11_Off : bool;
-                     ck_20_1 : bool; v_129 : bool; v_128 : bool;
-                     v_127 : bool; v_126 : bool; v_125 : bool; v_124 : bool;
+                     ck_20_1 : bool; v_131 : bool; v_130 : bool;
+                     v_129 : bool; v_128 : bool; v_127 : bool; v_126 : bool;
                      r_3_St_11_On : bool; s_8_St_11_On_1 : bool;
                      r_3_St_11_Off : bool; s_8_St_11_Off_1 : bool;
                      ck_19_1 : bool; nr_4_St_12_On : bool;
                      ns_4_St_12_On_1 : bool; luz_on_St_12_On : bool;
                      nr_4_St_12_Off : bool; ns_4_St_12_Off_1 : bool;
-                     luz_on_St_12_Off : bool; ck_18_1 : bool; v_123 : bool;
-                     v_122 : bool; v_121 : bool; v_120 : bool; v_119 : bool;
-                     v_118 : bool; r_4_St_12_On : bool;
+                     luz_on_St_12_Off : bool; ck_18_1 : bool; v_125 : bool;
+                     v_124 : bool; v_123 : bool; v_122 : bool; v_121 : bool;
+                     v_120 : bool; r_4_St_12_On : bool;
                      s_9_St_12_On_1 : bool; r_4_St_12_Off : bool;
-                     s_9_St_12_Off_1 : bool; ck_17_1 : bool; v_306 : bool;
-                     v_305 : bool; v_304 : bool; v_303 : bool; v_302 : bool;
-                     v_301 : bool; v_300 : bool; v_299 : bool; v_298 : bool;
-                     v_297 : bool; v_296 : bool; v_295 : bool; v_294 : bool;
-                     v_293 : bool; v_292 : bool; v_291 : bool; v_290 : bool;
-                     v_289 : bool; v_288 : bool; v_287 : bool; v_286 : int;
-                     v_285 : int; v_284 : int; v_283 : int; v_282 : int;
+                     s_9_St_12_Off_1 : bool; ck_17_1 : bool; v_308 : bool;
+                     v_307 : bool; v_306 : bool; v_305 : bool; v_304 : bool;
+                     v_303 : bool; v_302 : bool; v_301 : bool; v_300 : bool;
+                     v_299 : bool; v_298 : bool; v_297 : bool; v_296 : bool;
+                     v_295 : bool; v_294 : bool; v_293 : bool; v_292 : bool;
+                     v_291 : bool; v_290 : bool; v_289 : bool; v_288 : int;
+                     v_287 : int; v_286 : int; v_285 : int; v_284 : int;
                      ns_5_St_13_REHEAT_2_0 : bool;
                      ns_5_St_13_REHEAT_3_0_0 : bool;
                      ns_5_St_13_REHEAT_3_0_1 : bool;
@@ -1746,29 +1749,29 @@ contract
                      nr_5_St_13_OFF : bool; ns_5_St_13_OFF_3 : bool;
                      ns_5_St_13_OFF_2 : bool; ns_5_St_13_OFF_1 : bool;
                      power_2_St_13_OFF : int; ck_16_3 : bool; ck_16_2 : bool;
-                     ck_16_1 : bool; v_116_2_0 : bool; v_116_3_0_0 : bool;
-                     v_116_3_0_1 : bool; v_116_2_1 : bool;
-                     v_116_3_1_0 : bool; v_116_3_1_1 : bool; v_117 : bool;
-                     v_116_3 : bool; v_116_2 : bool; v_116_1 : bool;
-                     v_115 : bool; v_114 : bool; v_113 : bool;
+                     ck_16_1 : bool; v_118_2_0 : bool; v_118_3_0_0 : bool;
+                     v_118_3_0_1 : bool; v_118_2_1 : bool;
+                     v_118_3_1_0 : bool; v_118_3_1_1 : bool; v_119 : bool;
+                     v_118_3 : bool; v_118_2 : bool; v_118_1 : bool;
+                     v_117 : bool; v_116 : bool; v_115 : bool;
+                     v_113_2_0 : bool; v_113_3_0_0 : bool;
+                     v_113_3_0_1 : bool; v_113_2_1 : bool;
+                     v_113_3_1_0 : bool; v_113_3_1_1 : bool; v_114 : bool;
+                     v_113_3 : bool; v_113_2 : bool; v_113_1 : bool;
                      v_111_2_0 : bool; v_111_3_0_0 : bool;
                      v_111_3_0_1 : bool; v_111_2_1 : bool;
                      v_111_3_1_0 : bool; v_111_3_1_1 : bool; v_112 : bool;
                      v_111_3 : bool; v_111_2 : bool; v_111_1 : bool;
-                     v_109_2_0 : bool; v_109_3_0_0 : bool;
-                     v_109_3_0_1 : bool; v_109_2_1 : bool;
-                     v_109_3_1_0 : bool; v_109_3_1_1 : bool; v_110 : bool;
-                     v_109_3 : bool; v_109_2 : bool; v_109_1 : bool;
-                     v_108 : bool; v_106_2_0 : bool; v_106_3_0_0 : bool;
-                     v_106_3_0_1 : bool; v_106_2_1 : bool;
-                     v_106_3_1_0 : bool; v_106_3_1_1 : bool; v_107 : bool;
-                     v_106_3 : bool; v_106_2 : bool; v_106_1 : bool;
-                     v_329 : bool; v_328 : bool; v_327 : bool; v_326 : bool;
-                     v_325 : bool; v_324 : bool; v_323 : bool; v_322 : bool;
-                     v_321 : bool; v_320 : bool; v_319 : bool; v_318 : bool;
-                     v_317 : bool; v_316 : bool; v_315 : bool; v_314 : bool;
-                     v_313 : bool; v_312 : bool; v_311 : bool; v_310 : bool;
-                     v_309 : bool; v_308 : bool; v_307 : bool;
+                     v_110 : bool; v_108_2_0 : bool; v_108_3_0_0 : bool;
+                     v_108_3_0_1 : bool; v_108_2_1 : bool;
+                     v_108_3_1_0 : bool; v_108_3_1_1 : bool; v_109 : bool;
+                     v_108_3 : bool; v_108_2 : bool; v_108_1 : bool;
+                     v_331 : bool; v_330 : bool; v_329 : bool; v_328 : bool;
+                     v_327 : bool; v_326 : bool; v_325 : bool; v_324 : bool;
+                     v_323 : bool; v_322 : bool; v_321 : bool; v_320 : bool;
+                     v_319 : bool; v_318 : bool; v_317 : bool; v_316 : bool;
+                     v_315 : bool; v_314 : bool; v_313 : bool; v_312 : bool;
+                     v_311 : bool; v_310 : bool; v_309 : bool;
                      s_10_St_13_REHEAT_2_0 : bool;
                      s_10_St_13_REHEAT_3_0_0 : bool;
                      s_10_St_13_REHEAT_3_0_1 : bool;
@@ -1812,14 +1815,14 @@ contract
                      s_10_St_13_HEAT_1 : bool; r_5_St_13_OFF : bool;
                      s_10_St_13_OFF_3 : bool; s_10_St_13_OFF_2 : bool;
                      s_10_St_13_OFF_1 : bool; ck_15_3 : bool; ck_15_2 : bool;
-                     ck_15_1 : bool; v_359 : bool; v_358 : bool;
-                     v_357 : bool; v_356 : bool; v_355 : bool; v_354 : bool;
-                     v_353 : bool; v_352 : bool; v_351 : bool; v_350 : bool;
-                     v_349 : bool; v_348 : bool; v_347 : bool; v_346 : bool;
-                     v_345 : bool; v_344 : bool; v_343 : bool; v_342 : bool;
-                     v_341 : bool; v_340 : bool; v_339 : bool; v_338 : bool;
-                     v_337 : bool; v_336 : bool; v_335 : int; v_334 : int;
-                     v_333 : int; v_332 : int; v_331 : int; v_330 : int;
+                     ck_15_1 : bool; v_361 : bool; v_360 : bool;
+                     v_359 : bool; v_358 : bool; v_357 : bool; v_356 : bool;
+                     v_355 : bool; v_354 : bool; v_353 : bool; v_352 : bool;
+                     v_351 : bool; v_350 : bool; v_349 : bool; v_348 : bool;
+                     v_347 : bool; v_346 : bool; v_345 : bool; v_344 : bool;
+                     v_343 : bool; v_342 : bool; v_341 : bool; v_340 : bool;
+                     v_339 : bool; v_338 : bool; v_337 : int; v_336 : int;
+                     v_335 : int; v_334 : int; v_333 : int; v_332 : int;
                      ns_6_St_14_STANDBY_2_0 : bool;
                      ns_6_St_14_STANDBY_3_0_0 : bool;
                      ns_6_St_14_STANDBY_3_0_1 : bool;
@@ -1872,18 +1875,18 @@ contract
                      nr_6_St_14_OFF : bool; ns_6_St_14_OFF_3 : bool;
                      ns_6_St_14_OFF_2 : bool; ns_6_St_14_OFF_1 : bool;
                      power_1_St_14_OFF : int; ck_14_3 : bool; ck_14_2 : bool;
-                     ck_14_1 : bool; v_104_2_0 : bool; v_104_3_0_0 : bool;
-                     v_104_3_0_1 : bool; v_104_2_1 : bool;
-                     v_104_3_1_0 : bool; v_104_3_1_1 : bool; v_105 : bool;
-                     v_104_3 : bool; v_104_2 : bool; v_104_1 : bool;
-                     v_103 : bool; v_102 : bool; v_101 : bool; v_386 : bool;
-                     v_385 : bool; v_384 : bool; v_383 : bool; v_382 : bool;
-                     v_381 : bool; v_380 : bool; v_379 : bool; v_378 : bool;
-                     v_377 : bool; v_376 : bool; v_375 : bool; v_374 : bool;
-                     v_373 : bool; v_372 : bool; v_371 : bool; v_370 : bool;
-                     v_369 : bool; v_368 : bool; v_367 : bool; v_366 : bool;
-                     v_365 : bool; v_364 : bool; v_363 : bool; v_362 : bool;
-                     v_361 : bool; v_360 : bool;
+                     ck_14_1 : bool; v_106_2_0 : bool; v_106_3_0_0 : bool;
+                     v_106_3_0_1 : bool; v_106_2_1 : bool;
+                     v_106_3_1_0 : bool; v_106_3_1_1 : bool; v_107 : bool;
+                     v_106_3 : bool; v_106_2 : bool; v_106_1 : bool;
+                     v_105 : bool; v_104 : bool; v_103 : bool; v_388 : bool;
+                     v_387 : bool; v_386 : bool; v_385 : bool; v_384 : bool;
+                     v_383 : bool; v_382 : bool; v_381 : bool; v_380 : bool;
+                     v_379 : bool; v_378 : bool; v_377 : bool; v_376 : bool;
+                     v_375 : bool; v_374 : bool; v_373 : bool; v_372 : bool;
+                     v_371 : bool; v_370 : bool; v_369 : bool; v_368 : bool;
+                     v_367 : bool; v_366 : bool; v_365 : bool; v_364 : bool;
+                     v_363 : bool; v_362 : bool;
                      s_11_St_14_STANDBY_2_0 : bool;
                      s_11_St_14_STANDBY_3_0_0 : bool;
                      s_11_St_14_STANDBY_3_0_1 : bool;
@@ -1932,9 +1935,9 @@ contract
                      s_11_St_14_WF_1 : bool; r_6_St_14_OFF : bool;
                      s_11_St_14_OFF_3 : bool; s_11_St_14_OFF_2 : bool;
                      s_11_St_14_OFF_1 : bool; ck_13_3 : bool; ck_13_2 : bool;
-                     ck_13_1 : bool; v_396 : bool; v_395 : bool;
-                     v_394 : bool; v_393 : bool; v_392 : bool; v_391 : bool;
-                     v_390 : int; v_389 : int; v_388 : int; v_387 : int;
+                     ck_13_1 : bool; v_398 : bool; v_397 : bool;
+                     v_396 : bool; v_395 : bool; v_394 : bool; v_393 : bool;
+                     v_392 : int; v_391 : int; v_390 : int; v_389 : int;
                      ns_7_St_15_HIGHT_2_0 : bool;
                      ns_7_St_15_HIGHT_2_1 : bool; ns_7_St_15_ECO_2_0 : bool;
                      ns_7_St_15_ECO_2_1 : bool; ns_7_St_15_FROST_2_0 : bool;
@@ -1951,18 +1954,18 @@ contract
                      nr_7_St_15_OFF : bool; ns_7_St_15_OFF_2 : bool;
                      ns_7_St_15_OFF_1 : bool; ss_1_St_15_OFF : int;
                      power_St_15_OFF : int; ck_12_2 : bool; ck_12_1 : bool;
-                     v_100 : bool; v_99 : bool; v_97_2_0 : bool;
-                     v_97_2_1 : bool; v_95_2_0 : bool; v_95_2_1 : bool;
-                     v_98 : bool; v_97_2 : bool; v_97_1 : bool; v_96 : bool;
-                     v_95_2 : bool; v_95_1 : bool; v_94 : bool; v_93 : bool;
-                     v_92 : bool; v_91 : bool; v_89_2_0 : bool;
-                     v_89_2_1 : bool; v_90 : bool; v_89_2 : bool;
-                     v_89_1 : bool; v_88 : bool; v_87 : bool; v_86 : bool;
-                     v_84_2_0 : bool; v_84_2_1 : bool; v_85 : bool;
-                     v_84_2 : bool; v_84_1 : bool; v_83 : bool; v_82 : bool;
-                     v_81 : bool; v_80 : bool; v_404 : bool; v_403 : bool;
-                     v_402 : bool; v_401 : bool; v_400 : bool; v_399 : bool;
-                     v_398 : bool; v_397 : bool; s_12_St_15_HIGHT_2_0 : bool;
+                     v_102 : bool; v_101 : bool; v_99_2_0 : bool;
+                     v_99_2_1 : bool; v_97_2_0 : bool; v_97_2_1 : bool;
+                     v_100 : bool; v_99_2 : bool; v_99_1 : bool; v_98 : bool;
+                     v_97_2 : bool; v_97_1 : bool; v_96 : bool; v_95 : bool;
+                     v_94 : bool; v_93 : bool; v_91_2_0 : bool;
+                     v_91_2_1 : bool; v_92 : bool; v_91_2 : bool;
+                     v_91_1 : bool; v_90 : bool; v_89 : bool; v_88 : bool;
+                     v_86_2_0 : bool; v_86_2_1 : bool; v_87 : bool;
+                     v_86_2 : bool; v_86_1 : bool; v_85 : bool; v_84 : bool;
+                     v_83 : bool; v_82 : bool; v_406 : bool; v_405 : bool;
+                     v_404 : bool; v_403 : bool; v_402 : bool; v_401 : bool;
+                     v_400 : bool; v_399 : bool; s_12_St_15_HIGHT_2_0 : bool;
                      s_12_St_15_HIGHT_2_1 : bool; s_12_St_15_ECO_2_0 : bool;
                      s_12_St_15_ECO_2_1 : bool; s_12_St_15_FROST_2_0 : bool;
                      s_12_St_15_FROST_2_1 : bool; s_12_St_15_OFF_2_0 : bool;
@@ -1974,9 +1977,9 @@ contract
                      s_12_St_15_FROST_2 : bool; s_12_St_15_FROST_1 : bool;
                      r_7_St_15_OFF : bool; s_12_St_15_OFF_2 : bool;
                      s_12_St_15_OFF_1 : bool; ck_11_2 : bool; ck_11_1 : bool;
-                     v_416 : bool; v_415 : bool; v_414 : bool; v_413 : bool;
-                     v_412 : bool; v_411 : bool; v_410 : bool; v_409 : bool;
-                     v_408 : bool; v_407 : bool; v_406 : int; v_405 : int;
+                     v_418 : bool; v_417 : bool; v_416 : bool; v_415 : bool;
+                     v_414 : bool; v_413 : bool; v_412 : bool; v_411 : bool;
+                     v_410 : bool; v_409 : bool; v_408 : int; v_407 : int;
                      ns_8_St_16_CONFORT_2_0 : bool;
                      ns_8_St_16_CONFORT_2_1 : bool;
                      s_1_St_16_CONFORT_2_0 : bool;
@@ -1995,14 +1998,14 @@ contract
                      nr_8_St_16_MS : bool; ns_8_St_16_MS_2 : bool;
                      ns_8_St_16_MS_1 : bool; s_1_St_16_MS_2 : bool;
                      s_1_St_16_MS_1 : bool; pl_1_St_16_MS : int;
-                     ck_10_2 : bool; ck_10_1 : bool; v_78_2_0 : bool;
-                     v_78_2_1 : bool; v_79 : bool; v_78_2 : bool;
-                     v_78_1 : bool; v_76_2_0 : bool; v_76_2_1 : bool;
-                     v_77 : bool; v_76_2 : bool; v_76_1 : bool; v_75 : bool;
-                     v_73_2_0 : bool; v_73_2_1 : bool; v_74 : bool;
-                     v_73_2 : bool; v_73_1 : bool; v_72 : bool; v_424 : bool;
-                     v_423 : bool; v_422 : bool; v_421 : bool; v_420 : bool;
-                     v_419 : bool; v_418 : bool; v_417 : bool;
+                     ck_10_2 : bool; ck_10_1 : bool; v_80_2_0 : bool;
+                     v_80_2_1 : bool; v_81 : bool; v_80_2 : bool;
+                     v_80_1 : bool; v_78_2_0 : bool; v_78_2_1 : bool;
+                     v_79 : bool; v_78_2 : bool; v_78_1 : bool; v_77 : bool;
+                     v_75_2_0 : bool; v_75_2_1 : bool; v_76 : bool;
+                     v_75_2 : bool; v_75_1 : bool; v_74 : bool; v_426 : bool;
+                     v_425 : bool; v_424 : bool; v_423 : bool; v_422 : bool;
+                     v_421 : bool; v_420 : bool; v_419 : bool;
                      s_13_St_16_CONFORT_2_0 : bool;
                      s_13_St_16_CONFORT_2_1 : bool;
                      s_13_St_16_ECO_2_0 : bool; s_13_St_16_ECO_2_1 : bool;
@@ -2070,13 +2073,13 @@ contract
       merge ck_26_1 (true -> ns_St_8_Closed_1)(false -> ns_St_8_Open_1);
     nr = merge ck_26_1 (true -> nr_St_8_Closed)(false -> nr_St_8_Open);
     ck_25_1 = true fby ns_1_2;
-    r_St_8_Closed = if v_136 then true else (pnr when true(ck_25_1));
-    s_5_St_8_Closed_1 = if v_136 then false else true;
-    v_136 = ((push_1 when true(ck_25_1)) & (c_window_1 when true(ck_25_1)));
-    r_St_8_Open = if v_135 then true else (pnr when false(ck_25_1));
-    s_5_St_8_Open_1 = if v_135 then true else false;
-    v_135 = ((push_1 when false(ck_25_1)) or v_134);
-    v_134 = not((c_window_1 when false(ck_25_1)));
+    r_St_8_Closed = if v_138 then true else (pnr when true(ck_25_1));
+    s_5_St_8_Closed_1 = if v_138 then false else true;
+    v_138 = ((push_1 when true(ck_25_1)) & (c_window_1 when true(ck_25_1)));
+    r_St_8_Open = if v_137 then true else (pnr when false(ck_25_1));
+    s_5_St_8_Open_1 = if v_137 then true else false;
+    v_137 = ((push_1 when false(ck_25_1)) or v_136);
+    v_136 = not((c_window_1 when false(ck_25_1)));
     s_5_1 =
       merge ck_25_1 (true -> s_5_St_8_Closed_1)(false -> s_5_St_8_Open_1);
     r = merge ck_25_1 (true -> r_St_8_Closed)(false -> r_St_8_Open);
@@ -2097,13 +2100,13 @@ contract
       merge ck_24_1 (true -> ns_1_St_9_Closed_1)(false -> ns_1_St_9_Open_1);
     nr_1 = merge ck_24_1 (true -> nr_1_St_9_Closed)(false -> nr_1_St_9_Open);
     ck_23_1 = true fby ns_1_1;
-    r_1_St_9_Closed = if v_133 then true else (pnr_1 when true(ck_23_1));
-    s_6_St_9_Closed_1 = if v_133 then false else true;
-    v_133 = ((push when true(ck_23_1)) & (c_door_1 when true(ck_23_1)));
-    r_1_St_9_Open = if v_132 then true else (pnr_1 when false(ck_23_1));
-    s_6_St_9_Open_1 = if v_132 then true else false;
-    v_132 = ((push when false(ck_23_1)) or v_131);
-    v_131 = not((c_door_1 when false(ck_23_1)));
+    r_1_St_9_Closed = if v_135 then true else (pnr_1 when true(ck_23_1));
+    s_6_St_9_Closed_1 = if v_135 then false else true;
+    v_135 = ((push when true(ck_23_1)) & (c_door_1 when true(ck_23_1)));
+    r_1_St_9_Open = if v_134 then true else (pnr_1 when false(ck_23_1));
+    s_6_St_9_Open_1 = if v_134 then true else false;
+    v_134 = ((push when false(ck_23_1)) or v_133);
+    v_133 = not((c_door_1 when false(ck_23_1)));
     s_6_1 =
       merge ck_23_1 (true -> s_6_St_9_Closed_1)(false -> s_6_St_9_Open_1);
     r_1 = merge ck_23_1 (true -> r_1_St_9_Closed)(false -> r_1_St_9_Open);
@@ -2131,9 +2134,9 @@ contract
       else (pnr_2 when true(ck_21_1));
     s_7_St_10_Empty_1 =
       if (precense_1 when true(ck_21_1)) then false else true;
-    r_2_St_10_Ocupied = if v_130 then true else (pnr_2 when false(ck_21_1));
-    s_7_St_10_Ocupied_1 = if v_130 then true else false;
-    v_130 = not((precense_1 when false(ck_21_1)));
+    r_2_St_10_Ocupied = if v_132 then true else (pnr_2 when false(ck_21_1));
+    s_7_St_10_Ocupied_1 = if v_132 then true else false;
+    v_132 = not((precense_1 when false(ck_21_1)));
     s_7_1 =
       merge ck_21_1 (true -> s_7_St_10_Empty_1)(false -> s_7_St_10_Ocupied_1);
     r_2 = merge ck_21_1 (true -> r_2_St_10_Empty)(false -> r_2_St_10_Ocupied);
@@ -2154,16 +2157,16 @@ contract
       merge ck_20_1 (true -> ns_3_St_11_Off_1)(false -> ns_3_St_11_On_1);
     nr_3 = merge ck_20_1 (true -> nr_3_St_11_Off)(false -> nr_3_St_11_On);
     ck_19_1 = true fby ns_3_1;
-    r_3_St_11_Off = if v_129 then true else (pnr_3 when true(ck_19_1));
-    s_8_St_11_Off_1 = if v_129 then false else true;
-    v_129 = (v_127 or v_128);
-    v_128 = not((c2_3 when true(ck_19_1)));
-    v_127 = ((onn_1 when true(ck_19_1)) & (c1_3 when true(ck_19_1)));
-    r_3_St_11_On = if v_126 then true else (pnr_3 when false(ck_19_1));
-    s_8_St_11_On_1 = if v_126 then true else false;
-    v_126 = (v_124 or v_125);
-    v_125 = not((c1_3 when false(ck_19_1)));
-    v_124 = ((onn_1 when false(ck_19_1)) & (c2_3 when false(ck_19_1)));
+    r_3_St_11_Off = if v_131 then true else (pnr_3 when true(ck_19_1));
+    s_8_St_11_Off_1 = if v_131 then false else true;
+    v_131 = (v_129 or v_130);
+    v_130 = not((c2_3 when true(ck_19_1)));
+    v_129 = ((onn_1 when true(ck_19_1)) & (c1_3 when true(ck_19_1)));
+    r_3_St_11_On = if v_128 then true else (pnr_3 when false(ck_19_1));
+    s_8_St_11_On_1 = if v_128 then true else false;
+    v_128 = (v_126 or v_127);
+    v_127 = not((c1_3 when false(ck_19_1)));
+    v_126 = ((onn_1 when false(ck_19_1)) & (c2_3 when false(ck_19_1)));
     s_8_1 = merge ck_19_1 (true -> s_8_St_11_Off_1)(false -> s_8_St_11_On_1);
     r_3 = merge ck_19_1 (true -> r_3_St_11_Off)(false -> r_3_St_11_On);
     onn = on_lamp;
@@ -2183,16 +2186,16 @@ contract
       merge ck_18_1 (true -> ns_4_St_12_Off_1)(false -> ns_4_St_12_On_1);
     nr_4 = merge ck_18_1 (true -> nr_4_St_12_Off)(false -> nr_4_St_12_On);
     ck_17_1 = true fby ns_4_1;
-    r_4_St_12_Off = if v_123 then true else (pnr_4 when true(ck_17_1));
-    s_9_St_12_Off_1 = if v_123 then false else true;
-    v_123 = (v_121 or v_122);
-    v_122 = not((c2_2 when true(ck_17_1)));
-    v_121 = ((onn when true(ck_17_1)) & (c1_2 when true(ck_17_1)));
-    r_4_St_12_On = if v_120 then true else (pnr_4 when false(ck_17_1));
-    s_9_St_12_On_1 = if v_120 then true else false;
-    v_120 = (v_118 or v_119);
-    v_119 = not((c1_2 when false(ck_17_1)));
-    v_118 = ((onn when false(ck_17_1)) & (c2_2 when false(ck_17_1)));
+    r_4_St_12_Off = if v_125 then true else (pnr_4 when true(ck_17_1));
+    s_9_St_12_Off_1 = if v_125 then false else true;
+    v_125 = (v_123 or v_124);
+    v_124 = not((c2_2 when true(ck_17_1)));
+    v_123 = ((onn when true(ck_17_1)) & (c1_2 when true(ck_17_1)));
+    r_4_St_12_On = if v_122 then true else (pnr_4 when false(ck_17_1));
+    s_9_St_12_On_1 = if v_122 then true else false;
+    v_122 = (v_120 or v_121);
+    v_121 = not((c1_2 when false(ck_17_1)));
+    v_120 = ((onn when false(ck_17_1)) & (c2_2 when false(ck_17_1)));
     s_9_1 = merge ck_17_1 (true -> s_9_St_12_Off_1)(false -> s_9_St_12_On_1);
     r_4 = merge ck_17_1 (true -> r_4_St_12_Off)(false -> r_4_St_12_On);
     finish_1 = finish;
@@ -2229,96 +2232,96 @@ contract
     ns_5_St_13_REHEAT_1 = false;
     ns_5_St_13_REHEAT_2 = false;
     ns_5_St_13_REHEAT_3 = true;
-    v_282 =
+    v_284 =
       merge ck_16_3_1_1
         (true -> power_2_St_13_HEAT)(false -> power_2_St_13_MAINTAIN);
-    v_283 =
+    v_285 =
       merge ck_16_3_1_0
         (true -> 
           (((0 when true(ck_16_1)) when false(ck_16_2_1))
             when true(ck_16_3_1_0)))
         (false -> power_2_St_13_OFF);
-    v_284 = merge ck_16_2_1 (true -> v_282)(false -> v_283);
-    v_285 =
+    v_286 = merge ck_16_2_1 (true -> v_284)(false -> v_285);
+    v_287 =
       merge ck_16_3_0_0
         (true -> power_2_St_13_REHEAT)(false -> power_2_St_13_STANDBY);
-    v_286 =
+    v_288 =
       merge ck_16_2_0
         (true -> ((0 when false(ck_16_1)) when true(ck_16_2_0)))
-        (false -> v_285);
-    power_2 = merge ck_16_1 (true -> v_284)(false -> v_286);
-    v_287 =
-      merge ck_16_3_1_1
-        (true -> ns_5_St_13_HEAT_1)(false -> ns_5_St_13_MAINTAIN_1);
-    v_288 =
-      merge ck_16_3_1_1
-        (true -> ns_5_St_13_HEAT_2)(false -> ns_5_St_13_MAINTAIN_2);
+        (false -> v_287);
+    power_2 = merge ck_16_1 (true -> v_286)(false -> v_288);
     v_289 =
       merge ck_16_3_1_1
-        (true -> ns_5_St_13_HEAT_3)(false -> ns_5_St_13_MAINTAIN_3);
+        (true -> ns_5_St_13_HEAT_1)(false -> ns_5_St_13_MAINTAIN_1);
     v_290 =
-      merge ck_16_3_1_0
-        (true -> 
-          (((true when true(ck_16_1)) when false(ck_16_2_1))
-            when true(ck_16_3_1_0)))
-        (false -> ns_5_St_13_OFF_1);
+      merge ck_16_3_1_1
+        (true -> ns_5_St_13_HEAT_2)(false -> ns_5_St_13_MAINTAIN_2);
     v_291 =
-      merge ck_16_3_1_0
-        (true -> 
-          (((true when true(ck_16_1)) when false(ck_16_2_1))
-            when true(ck_16_3_1_0)))
-        (false -> ns_5_St_13_OFF_2);
+      merge ck_16_3_1_1
+        (true -> ns_5_St_13_HEAT_3)(false -> ns_5_St_13_MAINTAIN_3);
     v_292 =
       merge ck_16_3_1_0
         (true -> 
           (((true when true(ck_16_1)) when false(ck_16_2_1))
             when true(ck_16_3_1_0)))
-        (false -> ns_5_St_13_OFF_3);
+        (false -> ns_5_St_13_OFF_1);
     v_293 =
-      merge ck_16_3_0_0
-        (true -> ns_5_St_13_REHEAT_1)(false -> ns_5_St_13_STANDBY_1);
+      merge ck_16_3_1_0
+        (true -> 
+          (((true when true(ck_16_1)) when false(ck_16_2_1))
+            when true(ck_16_3_1_0)))
+        (false -> ns_5_St_13_OFF_2);
     v_294 =
-      merge ck_16_3_0_0
-        (true -> ns_5_St_13_REHEAT_2)(false -> ns_5_St_13_STANDBY_2);
+      merge ck_16_3_1_0
+        (true -> 
+          (((true when true(ck_16_1)) when false(ck_16_2_1))
+            when true(ck_16_3_1_0)))
+        (false -> ns_5_St_13_OFF_3);
     v_295 =
       merge ck_16_3_0_0
+        (true -> ns_5_St_13_REHEAT_1)(false -> ns_5_St_13_STANDBY_1);
+    v_296 =
+      merge ck_16_3_0_0
+        (true -> ns_5_St_13_REHEAT_2)(false -> ns_5_St_13_STANDBY_2);
+    v_297 =
+      merge ck_16_3_0_0
         (true -> ns_5_St_13_REHEAT_3)(false -> ns_5_St_13_STANDBY_3);
-    v_296 = merge ck_16_2_1 (true -> v_287)(false -> v_290);
-    v_297 = merge ck_16_2_1 (true -> v_288)(false -> v_291);
     v_298 = merge ck_16_2_1 (true -> v_289)(false -> v_292);
-    v_299 =
-      merge ck_16_2_0
-        (true -> ((true when false(ck_16_1)) when true(ck_16_2_0)))
-        (false -> v_293);
-    v_300 =
-      merge ck_16_2_0
-        (true -> ((true when false(ck_16_1)) when true(ck_16_2_0)))
-        (false -> v_294);
+    v_299 = merge ck_16_2_1 (true -> v_290)(false -> v_293);
+    v_300 = merge ck_16_2_1 (true -> v_291)(false -> v_294);
     v_301 =
       merge ck_16_2_0
         (true -> ((true when false(ck_16_1)) when true(ck_16_2_0)))
         (false -> v_295);
-    ns_5_1 = merge ck_16_1 (true -> v_296)(false -> v_299);
-    ns_5_2 = merge ck_16_1 (true -> v_297)(false -> v_300);
-    ns_5_3 = merge ck_16_1 (true -> v_298)(false -> v_301);
     v_302 =
+      merge ck_16_2_0
+        (true -> ((true when false(ck_16_1)) when true(ck_16_2_0)))
+        (false -> v_296);
+    v_303 =
+      merge ck_16_2_0
+        (true -> ((true when false(ck_16_1)) when true(ck_16_2_0)))
+        (false -> v_297);
+    ns_5_1 = merge ck_16_1 (true -> v_298)(false -> v_301);
+    ns_5_2 = merge ck_16_1 (true -> v_299)(false -> v_302);
+    ns_5_3 = merge ck_16_1 (true -> v_300)(false -> v_303);
+    v_304 =
       merge ck_16_3_1_1
         (true -> nr_5_St_13_HEAT)(false -> nr_5_St_13_MAINTAIN);
-    v_303 =
+    v_305 =
       merge ck_16_3_1_0
         (true -> 
           (((true when true(ck_16_1)) when false(ck_16_2_1))
             when true(ck_16_3_1_0)))
         (false -> nr_5_St_13_OFF);
-    v_304 = merge ck_16_2_1 (true -> v_302)(false -> v_303);
-    v_305 =
+    v_306 = merge ck_16_2_1 (true -> v_304)(false -> v_305);
+    v_307 =
       merge ck_16_3_0_0
         (true -> nr_5_St_13_REHEAT)(false -> nr_5_St_13_STANDBY);
-    v_306 =
+    v_308 =
       merge ck_16_2_0
         (true -> ((true when false(ck_16_1)) when true(ck_16_2_0)))
-        (false -> v_305);
-    nr_5 = merge ck_16_1 (true -> v_304)(false -> v_306);
+        (false -> v_307);
+    nr_5 = merge ck_16_1 (true -> v_306)(false -> v_308);
     ck_16_3_1_1 = ((ck_16_3 when true(ck_16_1)) when true(ck_16_2_1));
     ck_16_3_1_0 = ((ck_16_3 when true(ck_16_1)) when false(ck_16_2_1));
     ck_16_2_1 = (ck_16_2 when true(ck_16_1));
@@ -2401,95 +2404,95 @@ contract
         when false(ns_5_St_13_REHEAT_2_0));
     ns_5_St_13_REHEAT_2_0 =
       (ns_5_St_13_REHEAT_2 when false(ns_5_St_13_REHEAT_1));
-    v_307 = true fby ns_5_1;
-    v_308 = false fby ns_5_2;
-    v_309 = false fby ns_5_3;
-    ck_15_1 = v_307;
-    ck_15_2 = v_308;
-    ck_15_3 = v_309;
-    r_5_St_13_OFF = if v_114 then true else v_117;
-    s_10_St_13_OFF_1 = if v_114 then false else v_116_1;
-    s_10_St_13_OFF_2 = if v_114 then false else v_116_2;
-    s_10_St_13_OFF_3 = if v_114 then false else v_116_3;
-    v_117 =
-      if v_115
+    v_309 = true fby ns_5_1;
+    v_310 = false fby ns_5_2;
+    v_311 = false fby ns_5_3;
+    ck_15_1 = v_309;
+    ck_15_2 = v_310;
+    ck_15_3 = v_311;
+    r_5_St_13_OFF = if v_116 then true else v_119;
+    s_10_St_13_OFF_1 = if v_116 then false else v_118_1;
+    s_10_St_13_OFF_2 = if v_116 then false else v_118_2;
+    s_10_St_13_OFF_3 = if v_116 then false else v_118_3;
+    v_119 =
+      if v_117
       then true
       else (((pnr_5 when true(ck_15_1)) when false(ck_15_2_1))
              when false(ck_15_3_1_0))
         ;
-    v_116_1 = if v_115 then true else true;
-    v_116_2 = if v_115 then true else false;
-    v_116_3 = if v_115 then true else false;
-    v_115 =
+    v_118_1 = if v_117 then true else true;
+    v_118_2 = if v_117 then true else false;
+    v_118_3 = if v_117 then true else false;
+    v_117 =
       ((((start_1 when true(ck_15_1)) when false(ck_15_2_1))
          when false(ck_15_3_1_0))
        &
        (((c_1 when true(ck_15_1)) when false(ck_15_2_1))
          when false(ck_15_3_1_0)))
         ;
-    v_114 =
+    v_116 =
       ((((start_1 when true(ck_15_1)) when false(ck_15_2_1))
          when false(ck_15_3_1_0))
-       & v_113);
-    v_113 =
+       & v_115);
+    v_115 =
       not
       ((((c_1 when true(ck_15_1)) when false(ck_15_2_1))
          when false(ck_15_3_1_0)))
         ;
-    v_116_3_1_1 = ((v_116_3 when true(v_116_1)) when true(v_116_2_1));
-    v_116_3_1_0 = ((v_116_3 when true(v_116_1)) when false(v_116_2_1));
-    v_116_2_1 = (v_116_2 when true(v_116_1));
-    v_116_3_0_1 = ((v_116_3 when false(v_116_1)) when true(v_116_2_0));
-    v_116_3_0_0 = ((v_116_3 when false(v_116_1)) when false(v_116_2_0));
-    v_116_2_0 = (v_116_2 when false(v_116_1));
+    v_118_3_1_1 = ((v_118_3 when true(v_118_1)) when true(v_118_2_1));
+    v_118_3_1_0 = ((v_118_3 when true(v_118_1)) when false(v_118_2_1));
+    v_118_2_1 = (v_118_2 when true(v_118_1));
+    v_118_3_0_1 = ((v_118_3 when false(v_118_1)) when true(v_118_2_0));
+    v_118_3_0_0 = ((v_118_3 when false(v_118_1)) when false(v_118_2_0));
+    v_118_2_0 = (v_118_2 when false(v_118_1));
     r_5_St_13_HEAT =
       if (((finish_1 when true(ck_15_1)) when true(ck_15_2_1))
            when true(ck_15_3_1_1))
       then true
-      else v_112;
+      else v_114;
     s_10_St_13_HEAT_1 =
       if (((finish_1 when true(ck_15_1)) when true(ck_15_2_1))
            when true(ck_15_3_1_1))
       then true
-      else v_111_1;
+      else v_113_1;
     s_10_St_13_HEAT_2 =
       if (((finish_1 when true(ck_15_1)) when true(ck_15_2_1))
            when true(ck_15_3_1_1))
       then false
-      else v_111_2;
+      else v_113_2;
     s_10_St_13_HEAT_3 =
       if (((finish_1 when true(ck_15_1)) when true(ck_15_2_1))
            when true(ck_15_3_1_1))
       then false
-      else v_111_3;
-    v_112 =
+      else v_113_3;
+    v_114 =
       if (((temp_ok_1 when true(ck_15_1)) when true(ck_15_2_1))
            when true(ck_15_3_1_1))
       then true
       else (((pnr_5 when true(ck_15_1)) when true(ck_15_2_1))
              when true(ck_15_3_1_1))
         ;
-    v_111_1 =
+    v_113_1 =
       if (((temp_ok_1 when true(ck_15_1)) when true(ck_15_2_1))
            when true(ck_15_3_1_1))
       then true
       else true;
-    v_111_2 =
+    v_113_2 =
       if (((temp_ok_1 when true(ck_15_1)) when true(ck_15_2_1))
            when true(ck_15_3_1_1))
       then true
       else true;
-    v_111_3 =
+    v_113_3 =
       if (((temp_ok_1 when true(ck_15_1)) when true(ck_15_2_1))
            when true(ck_15_3_1_1))
       then false
       else true;
-    v_111_3_1_1 = ((v_111_3 when true(v_111_1)) when true(v_111_2_1));
-    v_111_3_1_0 = ((v_111_3 when true(v_111_1)) when false(v_111_2_1));
-    v_111_2_1 = (v_111_2 when true(v_111_1));
-    v_111_3_0_1 = ((v_111_3 when false(v_111_1)) when true(v_111_2_0));
-    v_111_3_0_0 = ((v_111_3 when false(v_111_1)) when false(v_111_2_0));
-    v_111_2_0 = (v_111_2 when false(v_111_1));
+    v_113_3_1_1 = ((v_113_3 when true(v_113_1)) when true(v_113_2_1));
+    v_113_3_1_0 = ((v_113_3 when true(v_113_1)) when false(v_113_2_1));
+    v_113_2_1 = (v_113_2 when true(v_113_1));
+    v_113_3_0_1 = ((v_113_3 when false(v_113_1)) when true(v_113_2_0));
+    v_113_3_0_0 = ((v_113_3 when false(v_113_1)) when false(v_113_2_0));
+    v_113_2_0 = (v_113_2 when false(v_113_1));
     r_5_St_13_STANDBY =
       if (((c_1 when false(ck_15_1)) when false(ck_15_2_0))
            when false(ck_15_3_0_0))
@@ -2512,164 +2515,164 @@ contract
            when false(ck_15_3_0_0))
       then true
       else false;
-    r_5_St_13_MAINTAIN = if v_108 then true else v_110;
-    s_10_St_13_MAINTAIN_1 = if v_108 then false else v_109_1;
-    s_10_St_13_MAINTAIN_2 = if v_108 then false else v_109_2;
-    s_10_St_13_MAINTAIN_3 = if v_108 then true else v_109_3;
-    v_110 =
+    r_5_St_13_MAINTAIN = if v_110 then true else v_112;
+    s_10_St_13_MAINTAIN_1 = if v_110 then false else v_111_1;
+    s_10_St_13_MAINTAIN_2 = if v_110 then false else v_111_2;
+    s_10_St_13_MAINTAIN_3 = if v_110 then true else v_111_3;
+    v_112 =
       if (((finish_1 when true(ck_15_1)) when true(ck_15_2_1))
            when false(ck_15_3_1_1))
       then true
       else (((pnr_5 when true(ck_15_1)) when true(ck_15_2_1))
              when false(ck_15_3_1_1))
         ;
-    v_109_1 =
+    v_111_1 =
       if (((finish_1 when true(ck_15_1)) when true(ck_15_2_1))
            when false(ck_15_3_1_1))
       then true
       else true;
-    v_109_2 =
+    v_111_2 =
       if (((finish_1 when true(ck_15_1)) when true(ck_15_2_1))
            when false(ck_15_3_1_1))
       then false
       else true;
-    v_109_3 =
+    v_111_3 =
       if (((finish_1 when true(ck_15_1)) when true(ck_15_2_1))
            when false(ck_15_3_1_1))
       then false
       else false;
-    v_108 =
+    v_110 =
       ((((cold_1 when true(ck_15_1)) when true(ck_15_2_1))
          when false(ck_15_3_1_1))
        &
        (((c_1 when true(ck_15_1)) when true(ck_15_2_1))
          when false(ck_15_3_1_1)))
         ;
-    v_109_3_1_1 = ((v_109_3 when true(v_109_1)) when true(v_109_2_1));
-    v_109_3_1_0 = ((v_109_3 when true(v_109_1)) when false(v_109_2_1));
-    v_109_2_1 = (v_109_2 when true(v_109_1));
-    v_109_3_0_1 = ((v_109_3 when false(v_109_1)) when true(v_109_2_0));
-    v_109_3_0_0 = ((v_109_3 when false(v_109_1)) when false(v_109_2_0));
-    v_109_2_0 = (v_109_2 when false(v_109_1));
+    v_111_3_1_1 = ((v_111_3 when true(v_111_1)) when true(v_111_2_1));
+    v_111_3_1_0 = ((v_111_3 when true(v_111_1)) when false(v_111_2_1));
+    v_111_2_1 = (v_111_2 when true(v_111_1));
+    v_111_3_0_1 = ((v_111_3 when false(v_111_1)) when true(v_111_2_0));
+    v_111_3_0_0 = ((v_111_3 when false(v_111_1)) when false(v_111_2_0));
+    v_111_2_0 = (v_111_2 when false(v_111_1));
     r_5_St_13_REHEAT =
       if (((temp_ok_1 when false(ck_15_1)) when false(ck_15_2_0))
            when true(ck_15_3_0_0))
       then true
-      else v_107;
+      else v_109;
     s_10_St_13_REHEAT_1 =
       if (((temp_ok_1 when false(ck_15_1)) when false(ck_15_2_0))
            when true(ck_15_3_0_0))
       then true
-      else v_106_1;
+      else v_108_1;
     s_10_St_13_REHEAT_2 =
       if (((temp_ok_1 when false(ck_15_1)) when false(ck_15_2_0))
            when true(ck_15_3_0_0))
       then true
-      else v_106_2;
+      else v_108_2;
     s_10_St_13_REHEAT_3 =
       if (((temp_ok_1 when false(ck_15_1)) when false(ck_15_2_0))
            when true(ck_15_3_0_0))
       then false
-      else v_106_3;
-    v_107 =
+      else v_108_3;
+    v_109 =
       if (((finish_1 when false(ck_15_1)) when false(ck_15_2_0))
            when true(ck_15_3_0_0))
       then true
       else (((pnr_5 when false(ck_15_1)) when false(ck_15_2_0))
              when true(ck_15_3_0_0))
         ;
-    v_106_1 =
+    v_108_1 =
       if (((finish_1 when false(ck_15_1)) when false(ck_15_2_0))
            when true(ck_15_3_0_0))
       then true
       else false;
-    v_106_2 =
+    v_108_2 =
       if (((finish_1 when false(ck_15_1)) when false(ck_15_2_0))
            when true(ck_15_3_0_0))
       then false
       else false;
-    v_106_3 =
+    v_108_3 =
       if (((finish_1 when false(ck_15_1)) when false(ck_15_2_0))
            when true(ck_15_3_0_0))
       then false
       else true;
-    v_106_3_1_1 = ((v_106_3 when true(v_106_1)) when true(v_106_2_1));
-    v_106_3_1_0 = ((v_106_3 when true(v_106_1)) when false(v_106_2_1));
-    v_106_2_1 = (v_106_2 when true(v_106_1));
-    v_106_3_0_1 = ((v_106_3 when false(v_106_1)) when true(v_106_2_0));
-    v_106_3_0_0 = ((v_106_3 when false(v_106_1)) when false(v_106_2_0));
-    v_106_2_0 = (v_106_2 when false(v_106_1));
-    v_310 =
-      merge ck_15_3_1_1
-        (true -> s_10_St_13_HEAT_1)(false -> s_10_St_13_MAINTAIN_1);
-    v_311 =
-      merge ck_15_3_1_1
-        (true -> s_10_St_13_HEAT_2)(false -> s_10_St_13_MAINTAIN_2);
+    v_108_3_1_1 = ((v_108_3 when true(v_108_1)) when true(v_108_2_1));
+    v_108_3_1_0 = ((v_108_3 when true(v_108_1)) when false(v_108_2_1));
+    v_108_2_1 = (v_108_2 when true(v_108_1));
+    v_108_3_0_1 = ((v_108_3 when false(v_108_1)) when true(v_108_2_0));
+    v_108_3_0_0 = ((v_108_3 when false(v_108_1)) when false(v_108_2_0));
+    v_108_2_0 = (v_108_2 when false(v_108_1));
     v_312 =
       merge ck_15_3_1_1
-        (true -> s_10_St_13_HEAT_3)(false -> s_10_St_13_MAINTAIN_3);
+        (true -> s_10_St_13_HEAT_1)(false -> s_10_St_13_MAINTAIN_1);
     v_313 =
-      merge ck_15_3_1_0
-        (true -> 
-          (((true when true(ck_15_1)) when false(ck_15_2_1))
-            when true(ck_15_3_1_0)))
-        (false -> s_10_St_13_OFF_1);
+      merge ck_15_3_1_1
+        (true -> s_10_St_13_HEAT_2)(false -> s_10_St_13_MAINTAIN_2);
     v_314 =
-      merge ck_15_3_1_0
-        (true -> 
-          (((true when true(ck_15_1)) when false(ck_15_2_1))
-            when true(ck_15_3_1_0)))
-        (false -> s_10_St_13_OFF_2);
+      merge ck_15_3_1_1
+        (true -> s_10_St_13_HEAT_3)(false -> s_10_St_13_MAINTAIN_3);
     v_315 =
       merge ck_15_3_1_0
         (true -> 
           (((true when true(ck_15_1)) when false(ck_15_2_1))
             when true(ck_15_3_1_0)))
-        (false -> s_10_St_13_OFF_3);
+        (false -> s_10_St_13_OFF_1);
     v_316 =
-      merge ck_15_3_0_0
-        (true -> s_10_St_13_REHEAT_1)(false -> s_10_St_13_STANDBY_1);
+      merge ck_15_3_1_0
+        (true -> 
+          (((true when true(ck_15_1)) when false(ck_15_2_1))
+            when true(ck_15_3_1_0)))
+        (false -> s_10_St_13_OFF_2);
     v_317 =
-      merge ck_15_3_0_0
-        (true -> s_10_St_13_REHEAT_2)(false -> s_10_St_13_STANDBY_2);
+      merge ck_15_3_1_0
+        (true -> 
+          (((true when true(ck_15_1)) when false(ck_15_2_1))
+            when true(ck_15_3_1_0)))
+        (false -> s_10_St_13_OFF_3);
     v_318 =
       merge ck_15_3_0_0
+        (true -> s_10_St_13_REHEAT_1)(false -> s_10_St_13_STANDBY_1);
+    v_319 =
+      merge ck_15_3_0_0
+        (true -> s_10_St_13_REHEAT_2)(false -> s_10_St_13_STANDBY_2);
+    v_320 =
+      merge ck_15_3_0_0
         (true -> s_10_St_13_REHEAT_3)(false -> s_10_St_13_STANDBY_3);
-    v_319 = merge ck_15_2_1 (true -> v_310)(false -> v_313);
-    v_320 = merge ck_15_2_1 (true -> v_311)(false -> v_314);
     v_321 = merge ck_15_2_1 (true -> v_312)(false -> v_315);
-    v_322 =
-      merge ck_15_2_0
-        (true -> ((true when false(ck_15_1)) when true(ck_15_2_0)))
-        (false -> v_316);
-    v_323 =
-      merge ck_15_2_0
-        (true -> ((true when false(ck_15_1)) when true(ck_15_2_0)))
-        (false -> v_317);
+    v_322 = merge ck_15_2_1 (true -> v_313)(false -> v_316);
+    v_323 = merge ck_15_2_1 (true -> v_314)(false -> v_317);
     v_324 =
       merge ck_15_2_0
         (true -> ((true when false(ck_15_1)) when true(ck_15_2_0)))
         (false -> v_318);
-    s_10_1 = merge ck_15_1 (true -> v_319)(false -> v_322);
-    s_10_2 = merge ck_15_1 (true -> v_320)(false -> v_323);
-    s_10_3 = merge ck_15_1 (true -> v_321)(false -> v_324);
     v_325 =
-      merge ck_15_3_1_1 (true -> r_5_St_13_HEAT)(false -> r_5_St_13_MAINTAIN);
+      merge ck_15_2_0
+        (true -> ((true when false(ck_15_1)) when true(ck_15_2_0)))
+        (false -> v_319);
     v_326 =
+      merge ck_15_2_0
+        (true -> ((true when false(ck_15_1)) when true(ck_15_2_0)))
+        (false -> v_320);
+    s_10_1 = merge ck_15_1 (true -> v_321)(false -> v_324);
+    s_10_2 = merge ck_15_1 (true -> v_322)(false -> v_325);
+    s_10_3 = merge ck_15_1 (true -> v_323)(false -> v_326);
+    v_327 =
+      merge ck_15_3_1_1 (true -> r_5_St_13_HEAT)(false -> r_5_St_13_MAINTAIN);
+    v_328 =
       merge ck_15_3_1_0
         (true -> 
           (((true when true(ck_15_1)) when false(ck_15_2_1))
             when true(ck_15_3_1_0)))
         (false -> r_5_St_13_OFF);
-    v_327 = merge ck_15_2_1 (true -> v_325)(false -> v_326);
-    v_328 =
+    v_329 = merge ck_15_2_1 (true -> v_327)(false -> v_328);
+    v_330 =
       merge ck_15_3_0_0
         (true -> r_5_St_13_REHEAT)(false -> r_5_St_13_STANDBY);
-    v_329 =
+    v_331 =
       merge ck_15_2_0
         (true -> ((true when false(ck_15_1)) when true(ck_15_2_0)))
-        (false -> v_328);
-    r_5 = merge ck_15_1 (true -> v_327)(false -> v_329);
+        (false -> v_330);
+    r_5 = merge ck_15_1 (true -> v_329)(false -> v_331);
     ck_15_3_1_1 = ((ck_15_3 when true(ck_15_1)) when true(ck_15_2_1));
     ck_15_3_1_0 = ((ck_15_3 when true(ck_15_1)) when false(ck_15_2_1));
     ck_15_2_1 = (ck_15_2 when true(ck_15_1));
@@ -2789,110 +2792,110 @@ contract
     ns_6_St_14_STANDBY_1 = false;
     ns_6_St_14_STANDBY_2 = true;
     ns_6_St_14_STANDBY_3 = true;
-    v_330 =
+    v_332 =
       merge ck_14_3_1_1
         (true -> power_1_St_14_OFF)(false -> power_1_St_14_RINSE);
-    v_331 =
+    v_333 =
       merge ck_14_3_1_0
         (true -> 
           (((0 when true(ck_14_1)) when false(ck_14_2_1))
             when true(ck_14_3_1_0)))
         (false -> power_1_St_14_SPIN);
-    v_332 = merge ck_14_2_1 (true -> v_330)(false -> v_331);
-    v_333 =
+    v_334 = merge ck_14_2_1 (true -> v_332)(false -> v_333);
+    v_335 =
       merge ck_14_3_0_1
         (true -> power_1_St_14_STANDBY)(false -> power_1_St_14_WASHING);
-    v_334 =
+    v_336 =
       merge ck_14_3_0_0
         (true -> 
           (((0 when false(ck_14_1)) when false(ck_14_2_0))
             when true(ck_14_3_0_0)))
         (false -> power_1_St_14_WF);
-    v_335 = merge ck_14_2_0 (true -> v_333)(false -> v_334);
-    power_1 = merge ck_14_1 (true -> v_332)(false -> v_335);
-    v_336 =
-      merge ck_14_3_1_1
-        (true -> ns_6_St_14_OFF_1)(false -> ns_6_St_14_RINSE_1);
-    v_337 =
-      merge ck_14_3_1_1
-        (true -> ns_6_St_14_OFF_2)(false -> ns_6_St_14_RINSE_2);
+    v_337 = merge ck_14_2_0 (true -> v_335)(false -> v_336);
+    power_1 = merge ck_14_1 (true -> v_334)(false -> v_337);
     v_338 =
       merge ck_14_3_1_1
-        (true -> ns_6_St_14_OFF_3)(false -> ns_6_St_14_RINSE_3);
+        (true -> ns_6_St_14_OFF_1)(false -> ns_6_St_14_RINSE_1);
     v_339 =
-      merge ck_14_3_1_0
-        (true -> 
-          (((true when true(ck_14_1)) when false(ck_14_2_1))
-            when true(ck_14_3_1_0)))
-        (false -> ns_6_St_14_SPIN_1);
+      merge ck_14_3_1_1
+        (true -> ns_6_St_14_OFF_2)(false -> ns_6_St_14_RINSE_2);
     v_340 =
-      merge ck_14_3_1_0
-        (true -> 
-          (((true when true(ck_14_1)) when false(ck_14_2_1))
-            when true(ck_14_3_1_0)))
-        (false -> ns_6_St_14_SPIN_2);
+      merge ck_14_3_1_1
+        (true -> ns_6_St_14_OFF_3)(false -> ns_6_St_14_RINSE_3);
     v_341 =
       merge ck_14_3_1_0
         (true -> 
           (((true when true(ck_14_1)) when false(ck_14_2_1))
             when true(ck_14_3_1_0)))
-        (false -> ns_6_St_14_SPIN_3);
+        (false -> ns_6_St_14_SPIN_1);
     v_342 =
-      merge ck_14_3_0_1
-        (true -> ns_6_St_14_STANDBY_1)(false -> ns_6_St_14_WASHING_1);
+      merge ck_14_3_1_0
+        (true -> 
+          (((true when true(ck_14_1)) when false(ck_14_2_1))
+            when true(ck_14_3_1_0)))
+        (false -> ns_6_St_14_SPIN_2);
     v_343 =
-      merge ck_14_3_0_1
-        (true -> ns_6_St_14_STANDBY_2)(false -> ns_6_St_14_WASHING_2);
+      merge ck_14_3_1_0
+        (true -> 
+          (((true when true(ck_14_1)) when false(ck_14_2_1))
+            when true(ck_14_3_1_0)))
+        (false -> ns_6_St_14_SPIN_3);
     v_344 =
       merge ck_14_3_0_1
-        (true -> ns_6_St_14_STANDBY_3)(false -> ns_6_St_14_WASHING_3);
+        (true -> ns_6_St_14_STANDBY_1)(false -> ns_6_St_14_WASHING_1);
     v_345 =
-      merge ck_14_3_0_0
-        (true -> 
-          (((true when false(ck_14_1)) when false(ck_14_2_0))
-            when true(ck_14_3_0_0)))
-        (false -> ns_6_St_14_WF_1);
+      merge ck_14_3_0_1
+        (true -> ns_6_St_14_STANDBY_2)(false -> ns_6_St_14_WASHING_2);
     v_346 =
-      merge ck_14_3_0_0
-        (true -> 
-          (((true when false(ck_14_1)) when false(ck_14_2_0))
-            when true(ck_14_3_0_0)))
-        (false -> ns_6_St_14_WF_2);
+      merge ck_14_3_0_1
+        (true -> ns_6_St_14_STANDBY_3)(false -> ns_6_St_14_WASHING_3);
     v_347 =
       merge ck_14_3_0_0
         (true -> 
           (((true when false(ck_14_1)) when false(ck_14_2_0))
             when true(ck_14_3_0_0)))
+        (false -> ns_6_St_14_WF_1);
+    v_348 =
+      merge ck_14_3_0_0
+        (true -> 
+          (((true when false(ck_14_1)) when false(ck_14_2_0))
+            when true(ck_14_3_0_0)))
+        (false -> ns_6_St_14_WF_2);
+    v_349 =
+      merge ck_14_3_0_0
+        (true -> 
+          (((true when false(ck_14_1)) when false(ck_14_2_0))
+            when true(ck_14_3_0_0)))
         (false -> ns_6_St_14_WF_3);
-    v_348 = merge ck_14_2_1 (true -> v_336)(false -> v_339);
-    v_349 = merge ck_14_2_1 (true -> v_337)(false -> v_340);
     v_350 = merge ck_14_2_1 (true -> v_338)(false -> v_341);
-    v_351 = merge ck_14_2_0 (true -> v_342)(false -> v_345);
-    v_352 = merge ck_14_2_0 (true -> v_343)(false -> v_346);
+    v_351 = merge ck_14_2_1 (true -> v_339)(false -> v_342);
+    v_352 = merge ck_14_2_1 (true -> v_340)(false -> v_343);
     v_353 = merge ck_14_2_0 (true -> v_344)(false -> v_347);
-    ns_6_1 = merge ck_14_1 (true -> v_348)(false -> v_351);
-    ns_6_2 = merge ck_14_1 (true -> v_349)(false -> v_352);
-    ns_6_3 = merge ck_14_1 (true -> v_350)(false -> v_353);
-    v_354 =
+    v_354 = merge ck_14_2_0 (true -> v_345)(false -> v_348);
+    v_355 = merge ck_14_2_0 (true -> v_346)(false -> v_349);
+    ns_6_1 = merge ck_14_1 (true -> v_350)(false -> v_353);
+    ns_6_2 = merge ck_14_1 (true -> v_351)(false -> v_354);
+    ns_6_3 = merge ck_14_1 (true -> v_352)(false -> v_355);
+    v_356 =
       merge ck_14_3_1_1 (true -> nr_6_St_14_OFF)(false -> nr_6_St_14_RINSE);
-    v_355 =
+    v_357 =
       merge ck_14_3_1_0
         (true -> 
           (((true when true(ck_14_1)) when false(ck_14_2_1))
             when true(ck_14_3_1_0)))
         (false -> nr_6_St_14_SPIN);
-    v_356 = merge ck_14_2_1 (true -> v_354)(false -> v_355);
-    v_357 =
+    v_358 = merge ck_14_2_1 (true -> v_356)(false -> v_357);
+    v_359 =
       merge ck_14_3_0_1
         (true -> nr_6_St_14_STANDBY)(false -> nr_6_St_14_WASHING);
-    v_358 =
+    v_360 =
       merge ck_14_3_0_0
         (true -> 
           (((true when false(ck_14_1)) when false(ck_14_2_0))
             when true(ck_14_3_0_0)))
         (false -> nr_6_St_14_WF);
-    v_359 = merge ck_14_2_0 (true -> v_357)(false -> v_358);
-    nr_6 = merge ck_14_1 (true -> v_356)(false -> v_359);
+    v_361 = merge ck_14_2_0 (true -> v_359)(false -> v_360);
+    nr_6 = merge ck_14_1 (true -> v_358)(false -> v_361);
     ck_14_3_1_1 = ((ck_14_3 when true(ck_14_1)) when true(ck_14_2_1));
     ck_14_3_1_0 = ((ck_14_3 when true(ck_14_1)) when false(ck_14_2_1));
     ck_14_2_1 = (ck_14_2 when true(ck_14_1));
@@ -2988,12 +2991,12 @@ contract
         when false(ns_6_St_14_STANDBY_2_0));
     ns_6_St_14_STANDBY_2_0 =
       (ns_6_St_14_STANDBY_2 when false(ns_6_St_14_STANDBY_1));
-    v_360 = true fby ns_6_1;
-    v_361 = true fby ns_6_2;
-    v_362 = true fby ns_6_3;
-    ck_13_1 = v_360;
-    ck_13_2 = v_361;
-    ck_13_3 = v_362;
+    v_362 = true fby ns_6_1;
+    v_363 = true fby ns_6_2;
+    v_364 = true fby ns_6_3;
+    ck_13_1 = v_362;
+    ck_13_2 = v_363;
+    ck_13_3 = v_364;
     r_6_St_14_OFF =
       if (((s_2 when true(ck_13_1)) when true(ck_13_2_1))
            when true(ck_13_3_1_1))
@@ -3016,41 +3019,41 @@ contract
            when true(ck_13_3_1_1))
       then false
       else true;
-    r_6_St_14_WF = if v_101 then true else v_105;
-    s_11_St_14_WF_1 = if v_101 then false else v_104_1;
-    s_11_St_14_WF_2 = if v_101 then true else v_104_2;
-    s_11_St_14_WF_3 = if v_101 then false else v_104_3;
-    v_105 =
-      if v_103
+    r_6_St_14_WF = if v_103 then true else v_107;
+    s_11_St_14_WF_1 = if v_103 then false else v_106_1;
+    s_11_St_14_WF_2 = if v_103 then true else v_106_2;
+    s_11_St_14_WF_3 = if v_103 then false else v_106_3;
+    v_107 =
+      if v_105
       then true
       else (((pnr_6 when false(ck_13_1)) when false(ck_13_2_0))
              when false(ck_13_3_0_0))
         ;
-    v_104_1 = if v_103 then false else false;
-    v_104_2 = if v_103 then true else false;
-    v_104_3 = if v_103 then true else false;
-    v_103 =
+    v_106_1 = if v_105 then false else false;
+    v_106_2 = if v_105 then true else false;
+    v_106_3 = if v_105 then true else false;
+    v_105 =
       ((((e_1 when false(ck_13_1)) when false(ck_13_2_0))
          when false(ck_13_3_0_0))
-       & v_102);
-    v_102 =
+       & v_104);
+    v_104 =
       not
       ((((c when false(ck_13_1)) when false(ck_13_2_0))
          when false(ck_13_3_0_0)))
         ;
-    v_101 =
+    v_103 =
       ((((e_1 when false(ck_13_1)) when false(ck_13_2_0))
          when false(ck_13_3_0_0))
        &
        (((c when false(ck_13_1)) when false(ck_13_2_0))
          when false(ck_13_3_0_0)))
         ;
-    v_104_3_1_1 = ((v_104_3 when true(v_104_1)) when true(v_104_2_1));
-    v_104_3_1_0 = ((v_104_3 when true(v_104_1)) when false(v_104_2_1));
-    v_104_2_1 = (v_104_2 when true(v_104_1));
-    v_104_3_0_1 = ((v_104_3 when false(v_104_1)) when true(v_104_2_0));
-    v_104_3_0_0 = ((v_104_3 when false(v_104_1)) when false(v_104_2_0));
-    v_104_2_0 = (v_104_2 when false(v_104_1));
+    v_106_3_1_1 = ((v_106_3 when true(v_106_1)) when true(v_106_2_1));
+    v_106_3_1_0 = ((v_106_3 when true(v_106_1)) when false(v_106_2_1));
+    v_106_2_1 = (v_106_2 when true(v_106_1));
+    v_106_3_0_1 = ((v_106_3 when false(v_106_1)) when true(v_106_2_0));
+    v_106_3_0_0 = ((v_106_3 when false(v_106_1)) when false(v_106_2_0));
+    v_106_2_0 = (v_106_2 when false(v_106_1));
     r_6_St_14_WASHING =
       if (((e_1 when false(ck_13_1)) when true(ck_13_2_0))
            when false(ck_13_3_0_1))
@@ -3139,89 +3142,89 @@ contract
            when true(ck_13_3_0_1))
       then false
       else true;
-    v_363 =
-      merge ck_13_3_1_1
-        (true -> s_11_St_14_OFF_1)(false -> s_11_St_14_RINSE_1);
-    v_364 =
-      merge ck_13_3_1_1
-        (true -> s_11_St_14_OFF_2)(false -> s_11_St_14_RINSE_2);
     v_365 =
       merge ck_13_3_1_1
-        (true -> s_11_St_14_OFF_3)(false -> s_11_St_14_RINSE_3);
+        (true -> s_11_St_14_OFF_1)(false -> s_11_St_14_RINSE_1);
     v_366 =
-      merge ck_13_3_1_0
-        (true -> 
-          (((true when true(ck_13_1)) when false(ck_13_2_1))
-            when true(ck_13_3_1_0)))
-        (false -> s_11_St_14_SPIN_1);
+      merge ck_13_3_1_1
+        (true -> s_11_St_14_OFF_2)(false -> s_11_St_14_RINSE_2);
     v_367 =
-      merge ck_13_3_1_0
-        (true -> 
-          (((true when true(ck_13_1)) when false(ck_13_2_1))
-            when true(ck_13_3_1_0)))
-        (false -> s_11_St_14_SPIN_2);
+      merge ck_13_3_1_1
+        (true -> s_11_St_14_OFF_3)(false -> s_11_St_14_RINSE_3);
     v_368 =
       merge ck_13_3_1_0
         (true -> 
           (((true when true(ck_13_1)) when false(ck_13_2_1))
             when true(ck_13_3_1_0)))
-        (false -> s_11_St_14_SPIN_3);
+        (false -> s_11_St_14_SPIN_1);
     v_369 =
-      merge ck_13_3_0_1
-        (true -> s_11_St_14_STANDBY_1)(false -> s_11_St_14_WASHING_1);
+      merge ck_13_3_1_0
+        (true -> 
+          (((true when true(ck_13_1)) when false(ck_13_2_1))
+            when true(ck_13_3_1_0)))
+        (false -> s_11_St_14_SPIN_2);
     v_370 =
-      merge ck_13_3_0_1
-        (true -> s_11_St_14_STANDBY_2)(false -> s_11_St_14_WASHING_2);
+      merge ck_13_3_1_0
+        (true -> 
+          (((true when true(ck_13_1)) when false(ck_13_2_1))
+            when true(ck_13_3_1_0)))
+        (false -> s_11_St_14_SPIN_3);
     v_371 =
       merge ck_13_3_0_1
-        (true -> s_11_St_14_STANDBY_3)(false -> s_11_St_14_WASHING_3);
+        (true -> s_11_St_14_STANDBY_1)(false -> s_11_St_14_WASHING_1);
     v_372 =
-      merge ck_13_3_0_0
-        (true -> 
-          (((true when false(ck_13_1)) when false(ck_13_2_0))
-            when true(ck_13_3_0_0)))
-        (false -> s_11_St_14_WF_1);
+      merge ck_13_3_0_1
+        (true -> s_11_St_14_STANDBY_2)(false -> s_11_St_14_WASHING_2);
     v_373 =
-      merge ck_13_3_0_0
-        (true -> 
-          (((true when false(ck_13_1)) when false(ck_13_2_0))
-            when true(ck_13_3_0_0)))
-        (false -> s_11_St_14_WF_2);
+      merge ck_13_3_0_1
+        (true -> s_11_St_14_STANDBY_3)(false -> s_11_St_14_WASHING_3);
     v_374 =
       merge ck_13_3_0_0
         (true -> 
           (((true when false(ck_13_1)) when false(ck_13_2_0))
             when true(ck_13_3_0_0)))
+        (false -> s_11_St_14_WF_1);
+    v_375 =
+      merge ck_13_3_0_0
+        (true -> 
+          (((true when false(ck_13_1)) when false(ck_13_2_0))
+            when true(ck_13_3_0_0)))
+        (false -> s_11_St_14_WF_2);
+    v_376 =
+      merge ck_13_3_0_0
+        (true -> 
+          (((true when false(ck_13_1)) when false(ck_13_2_0))
+            when true(ck_13_3_0_0)))
         (false -> s_11_St_14_WF_3);
-    v_375 = merge ck_13_2_1 (true -> v_363)(false -> v_366);
-    v_376 = merge ck_13_2_1 (true -> v_364)(false -> v_367);
     v_377 = merge ck_13_2_1 (true -> v_365)(false -> v_368);
-    v_378 = merge ck_13_2_0 (true -> v_369)(false -> v_372);
-    v_379 = merge ck_13_2_0 (true -> v_370)(false -> v_373);
+    v_378 = merge ck_13_2_1 (true -> v_366)(false -> v_369);
+    v_379 = merge ck_13_2_1 (true -> v_367)(false -> v_370);
     v_380 = merge ck_13_2_0 (true -> v_371)(false -> v_374);
-    s_11_1 = merge ck_13_1 (true -> v_375)(false -> v_378);
-    s_11_2 = merge ck_13_1 (true -> v_376)(false -> v_379);
-    s_11_3 = merge ck_13_1 (true -> v_377)(false -> v_380);
-    v_381 =
+    v_381 = merge ck_13_2_0 (true -> v_372)(false -> v_375);
+    v_382 = merge ck_13_2_0 (true -> v_373)(false -> v_376);
+    s_11_1 = merge ck_13_1 (true -> v_377)(false -> v_380);
+    s_11_2 = merge ck_13_1 (true -> v_378)(false -> v_381);
+    s_11_3 = merge ck_13_1 (true -> v_379)(false -> v_382);
+    v_383 =
       merge ck_13_3_1_1 (true -> r_6_St_14_OFF)(false -> r_6_St_14_RINSE);
-    v_382 =
+    v_384 =
       merge ck_13_3_1_0
         (true -> 
           (((true when true(ck_13_1)) when false(ck_13_2_1))
             when true(ck_13_3_1_0)))
         (false -> r_6_St_14_SPIN);
-    v_383 = merge ck_13_2_1 (true -> v_381)(false -> v_382);
-    v_384 =
+    v_385 = merge ck_13_2_1 (true -> v_383)(false -> v_384);
+    v_386 =
       merge ck_13_3_0_1
         (true -> r_6_St_14_STANDBY)(false -> r_6_St_14_WASHING);
-    v_385 =
+    v_387 =
       merge ck_13_3_0_0
         (true -> 
           (((true when false(ck_13_1)) when false(ck_13_2_0))
             when true(ck_13_3_0_0)))
         (false -> r_6_St_14_WF);
-    v_386 = merge ck_13_2_0 (true -> v_384)(false -> v_385);
-    r_6 = merge ck_13_1 (true -> v_383)(false -> v_386);
+    v_388 = merge ck_13_2_0 (true -> v_386)(false -> v_387);
+    r_6 = merge ck_13_1 (true -> v_385)(false -> v_388);
     ck_13_3_1_1 = ((ck_13_3 when true(ck_13_1)) when true(ck_13_2_1));
     ck_13_3_1_0 = ((ck_13_3 when true(ck_13_1)) when false(ck_13_2_1));
     ck_13_2_1 = (ck_13_2 when true(ck_13_1));
@@ -3346,31 +3349,31 @@ contract
     nr_7_St_15_HIGHT = false;
     ns_7_St_15_HIGHT_1 = false;
     ns_7_St_15_HIGHT_2 = true;
-    v_387 =
-      merge ck_12_2_1 (true -> power_St_15_ECO)(false -> power_St_15_FROST);
-    v_388 =
-      merge ck_12_2_0 (true -> power_St_15_HIGHT)(false -> power_St_15_OFF);
-    power = merge ck_12_1 (true -> v_387)(false -> v_388);
     v_389 =
-      merge ck_12_2_1 (true -> ss_1_St_15_ECO)(false -> ss_1_St_15_FROST);
+      merge ck_12_2_1 (true -> power_St_15_ECO)(false -> power_St_15_FROST);
     v_390 =
-      merge ck_12_2_0 (true -> ss_1_St_15_HIGHT)(false -> ss_1_St_15_OFF);
-    ss_1 = merge ck_12_1 (true -> v_389)(false -> v_390);
+      merge ck_12_2_0 (true -> power_St_15_HIGHT)(false -> power_St_15_OFF);
+    power = merge ck_12_1 (true -> v_389)(false -> v_390);
     v_391 =
-      merge ck_12_2_1 (true -> ns_7_St_15_ECO_1)(false -> ns_7_St_15_FROST_1);
+      merge ck_12_2_1 (true -> ss_1_St_15_ECO)(false -> ss_1_St_15_FROST);
     v_392 =
-      merge ck_12_2_1 (true -> ns_7_St_15_ECO_2)(false -> ns_7_St_15_FROST_2);
+      merge ck_12_2_0 (true -> ss_1_St_15_HIGHT)(false -> ss_1_St_15_OFF);
+    ss_1 = merge ck_12_1 (true -> v_391)(false -> v_392);
     v_393 =
-      merge ck_12_2_0 (true -> ns_7_St_15_HIGHT_1)(false -> ns_7_St_15_OFF_1);
+      merge ck_12_2_1 (true -> ns_7_St_15_ECO_1)(false -> ns_7_St_15_FROST_1);
     v_394 =
-      merge ck_12_2_0 (true -> ns_7_St_15_HIGHT_2)(false -> ns_7_St_15_OFF_2);
-    ns_7_1 = merge ck_12_1 (true -> v_391)(false -> v_393);
-    ns_7_2 = merge ck_12_1 (true -> v_392)(false -> v_394);
+      merge ck_12_2_1 (true -> ns_7_St_15_ECO_2)(false -> ns_7_St_15_FROST_2);
     v_395 =
-      merge ck_12_2_1 (true -> nr_7_St_15_ECO)(false -> nr_7_St_15_FROST);
+      merge ck_12_2_0 (true -> ns_7_St_15_HIGHT_1)(false -> ns_7_St_15_OFF_1);
     v_396 =
+      merge ck_12_2_0 (true -> ns_7_St_15_HIGHT_2)(false -> ns_7_St_15_OFF_2);
+    ns_7_1 = merge ck_12_1 (true -> v_393)(false -> v_395);
+    ns_7_2 = merge ck_12_1 (true -> v_394)(false -> v_396);
+    v_397 =
+      merge ck_12_2_1 (true -> nr_7_St_15_ECO)(false -> nr_7_St_15_FROST);
+    v_398 =
       merge ck_12_2_0 (true -> nr_7_St_15_HIGHT)(false -> nr_7_St_15_OFF);
-    nr_7 = merge ck_12_1 (true -> v_395)(false -> v_396);
+    nr_7 = merge ck_12_1 (true -> v_397)(false -> v_398);
     ck_12_2_1 = (ck_12_2 when true(ck_12_1));
     ck_12_2_0 = (ck_12_2 when false(ck_12_1));
     ns_7_St_15_OFF_2_1 = (ns_7_St_15_OFF_2 when true(ns_7_St_15_OFF_1));
@@ -3383,86 +3386,86 @@ contract
     ns_7_St_15_HIGHT_2_1 = (ns_7_St_15_HIGHT_2 when true(ns_7_St_15_HIGHT_1));
     ns_7_St_15_HIGHT_2_0 =
       (ns_7_St_15_HIGHT_2 when false(ns_7_St_15_HIGHT_1));
-    v_397 = false fby ns_7_1;
-    v_398 = false fby ns_7_2;
-    ck_11_1 = v_397;
-    ck_11_2 = v_398;
+    v_399 = false fby ns_7_1;
+    v_400 = false fby ns_7_2;
+    ck_11_1 = v_399;
+    ck_11_2 = v_400;
     r_7_St_15_OFF =
-      if v_100
+      if v_102
       then true
       else ((pnr_7 when false(ck_11_1)) when false(ck_11_2_0));
-    s_12_St_15_OFF_1 = if v_100 then true else false;
-    s_12_St_15_OFF_2 = if v_100 then false else false;
-    v_100 = (((up1_1 when false(ck_11_1)) when false(ck_11_2_0)) or v_99);
-    v_99 = not(((c1_1 when false(ck_11_1)) when false(ck_11_2_0)));
-    r_7_St_15_FROST = if v_91 then true else v_98;
-    s_12_St_15_FROST_1 = if v_91 then true else v_97_1;
-    s_12_St_15_FROST_2 = if v_91 then true else v_97_2;
-    v_98 = if v_93 then true else v_96;
-    v_97_1 = if v_93 then false else v_95_1;
-    v_97_2 = if v_93 then false else v_95_2;
-    v_96 =
-      if v_94
+    s_12_St_15_OFF_1 = if v_102 then true else false;
+    s_12_St_15_OFF_2 = if v_102 then false else false;
+    v_102 = (((up1_1 when false(ck_11_1)) when false(ck_11_2_0)) or v_101);
+    v_101 = not(((c1_1 when false(ck_11_1)) when false(ck_11_2_0)));
+    r_7_St_15_FROST = if v_93 then true else v_100;
+    s_12_St_15_FROST_1 = if v_93 then true else v_99_1;
+    s_12_St_15_FROST_2 = if v_93 then true else v_99_2;
+    v_100 = if v_95 then true else v_98;
+    v_99_1 = if v_95 then false else v_97_1;
+    v_99_2 = if v_95 then false else v_97_2;
+    v_98 =
+      if v_96
       then true
       else ((pnr_7 when true(ck_11_1)) when false(ck_11_2_1));
-    v_95_1 = if v_94 then false else true;
-    v_95_2 = if v_94 then true else false;
-    v_94 =
+    v_97_1 = if v_96 then false else true;
+    v_97_2 = if v_96 then true else false;
+    v_96 =
       (((up2_1 when true(ck_11_1)) when false(ck_11_2_1)) &
        ((c2_1 when true(ck_11_1)) when false(ck_11_2_1)));
-    v_93 = (((down1_1 when true(ck_11_1)) when false(ck_11_2_1)) or v_92);
-    v_92 = not(((c1_1 when true(ck_11_1)) when false(ck_11_2_1)));
-    v_91 =
+    v_95 = (((down1_1 when true(ck_11_1)) when false(ck_11_2_1)) or v_94);
+    v_94 = not(((c1_1 when true(ck_11_1)) when false(ck_11_2_1)));
+    v_93 =
       (((up1_1 when true(ck_11_1)) when false(ck_11_2_1)) &
        ((c1_1 when true(ck_11_1)) when false(ck_11_2_1)));
-    v_95_2_1 = (v_95_2 when true(v_95_1));
-    v_95_2_0 = (v_95_2 when false(v_95_1));
     v_97_2_1 = (v_97_2 when true(v_97_1));
     v_97_2_0 = (v_97_2 when false(v_97_1));
-    r_7_St_15_ECO = if v_87 then true else v_90;
-    s_12_St_15_ECO_1 = if v_87 then true else v_89_1;
-    s_12_St_15_ECO_2 = if v_87 then false else v_89_2;
-    v_90 =
-      if v_88
+    v_99_2_1 = (v_99_2 when true(v_99_1));
+    v_99_2_0 = (v_99_2 when false(v_99_1));
+    r_7_St_15_ECO = if v_89 then true else v_92;
+    s_12_St_15_ECO_1 = if v_89 then true else v_91_1;
+    s_12_St_15_ECO_2 = if v_89 then false else v_91_2;
+    v_92 =
+      if v_90
       then true
       else ((pnr_7 when true(ck_11_1)) when true(ck_11_2_1));
-    v_89_1 = if v_88 then false else true;
-    v_89_2 = if v_88 then true else true;
-    v_88 =
+    v_91_1 = if v_90 then false else true;
+    v_91_2 = if v_90 then true else true;
+    v_90 =
       (((up2_1 when true(ck_11_1)) when true(ck_11_2_1)) &
        ((c2_1 when true(ck_11_1)) when true(ck_11_2_1)));
-    v_87 = (((down1_1 when true(ck_11_1)) when true(ck_11_2_1)) or v_86);
-    v_86 = not(((c1_1 when true(ck_11_1)) when true(ck_11_2_1)));
-    v_89_2_1 = (v_89_2 when true(v_89_1));
-    v_89_2_0 = (v_89_2 when false(v_89_1));
-    r_7_St_15_HIGHT = if v_81 then true else v_85;
-    s_12_St_15_HIGHT_1 = if v_81 then true else v_84_1;
-    s_12_St_15_HIGHT_2 = if v_81 then true else v_84_2;
-    v_85 =
-      if v_83
+    v_89 = (((down1_1 when true(ck_11_1)) when true(ck_11_2_1)) or v_88);
+    v_88 = not(((c1_1 when true(ck_11_1)) when true(ck_11_2_1)));
+    v_91_2_1 = (v_91_2 when true(v_91_1));
+    v_91_2_0 = (v_91_2 when false(v_91_1));
+    r_7_St_15_HIGHT = if v_83 then true else v_87;
+    s_12_St_15_HIGHT_1 = if v_83 then true else v_86_1;
+    s_12_St_15_HIGHT_2 = if v_83 then true else v_86_2;
+    v_87 =
+      if v_85
       then true
       else ((pnr_7 when false(ck_11_1)) when true(ck_11_2_0));
-    v_84_1 = if v_83 then true else false;
-    v_84_2 = if v_83 then false else true;
-    v_83 = (((down2_1 when false(ck_11_1)) when true(ck_11_2_0)) & v_82);
-    v_82 = not(((c2_1 when false(ck_11_1)) when true(ck_11_2_0)));
-    v_81 = (((down1_1 when false(ck_11_1)) when true(ck_11_2_0)) & v_80);
-    v_80 = not(((c1_1 when false(ck_11_1)) when true(ck_11_2_0)));
-    v_84_2_1 = (v_84_2 when true(v_84_1));
-    v_84_2_0 = (v_84_2 when false(v_84_1));
-    v_399 =
-      merge ck_11_2_1 (true -> s_12_St_15_ECO_1)(false -> s_12_St_15_FROST_1);
-    v_400 =
-      merge ck_11_2_1 (true -> s_12_St_15_ECO_2)(false -> s_12_St_15_FROST_2);
+    v_86_1 = if v_85 then true else false;
+    v_86_2 = if v_85 then false else true;
+    v_85 = (((down2_1 when false(ck_11_1)) when true(ck_11_2_0)) & v_84);
+    v_84 = not(((c2_1 when false(ck_11_1)) when true(ck_11_2_0)));
+    v_83 = (((down1_1 when false(ck_11_1)) when true(ck_11_2_0)) & v_82);
+    v_82 = not(((c1_1 when false(ck_11_1)) when true(ck_11_2_0)));
+    v_86_2_1 = (v_86_2 when true(v_86_1));
+    v_86_2_0 = (v_86_2 when false(v_86_1));
     v_401 =
-      merge ck_11_2_0 (true -> s_12_St_15_HIGHT_1)(false -> s_12_St_15_OFF_1);
+      merge ck_11_2_1 (true -> s_12_St_15_ECO_1)(false -> s_12_St_15_FROST_1);
     v_402 =
+      merge ck_11_2_1 (true -> s_12_St_15_ECO_2)(false -> s_12_St_15_FROST_2);
+    v_403 =
+      merge ck_11_2_0 (true -> s_12_St_15_HIGHT_1)(false -> s_12_St_15_OFF_1);
+    v_404 =
       merge ck_11_2_0 (true -> s_12_St_15_HIGHT_2)(false -> s_12_St_15_OFF_2);
-    s_12_1 = merge ck_11_1 (true -> v_399)(false -> v_401);
-    s_12_2 = merge ck_11_1 (true -> v_400)(false -> v_402);
-    v_403 = merge ck_11_2_1 (true -> r_7_St_15_ECO)(false -> r_7_St_15_FROST);
-    v_404 = merge ck_11_2_0 (true -> r_7_St_15_HIGHT)(false -> r_7_St_15_OFF);
-    r_7 = merge ck_11_1 (true -> v_403)(false -> v_404);
+    s_12_1 = merge ck_11_1 (true -> v_401)(false -> v_403);
+    s_12_2 = merge ck_11_1 (true -> v_402)(false -> v_404);
+    v_405 = merge ck_11_2_1 (true -> r_7_St_15_ECO)(false -> r_7_St_15_FROST);
+    v_406 = merge ck_11_2_0 (true -> r_7_St_15_HIGHT)(false -> r_7_St_15_OFF);
+    r_7 = merge ck_11_1 (true -> v_405)(false -> v_406);
     ck_11_2_1 = (ck_11_2 when true(ck_11_1));
     ck_11_2_0 = (ck_11_2 when false(ck_11_1));
     s_12_St_15_OFF_2_1 = (s_12_St_15_OFF_2 when true(s_12_St_15_OFF_1));
@@ -3498,50 +3501,50 @@ contract
     nr_8_St_16_CONFORT = false;
     ns_8_St_16_CONFORT_1 = true;
     ns_8_St_16_CONFORT_2 = true;
-    v_405 =
+    v_407 =
       merge ck_10_2_1 (true -> pl_1_St_16_CONFORT)(false -> pl_1_St_16_ECO);
-    v_406 =
+    v_408 =
       merge ck_10_2_0
         (true -> ((0 when false(ck_10_1)) when true(ck_10_2_0)))
         (false -> pl_1_St_16_MS);
-    pl_1 = merge ck_10_1 (true -> v_405)(false -> v_406);
-    v_407 =
-      merge ck_10_2_1 (true -> s_1_St_16_CONFORT_1)(false -> s_1_St_16_ECO_1);
-    v_408 =
-      merge ck_10_2_1 (true -> s_1_St_16_CONFORT_2)(false -> s_1_St_16_ECO_2);
+    pl_1 = merge ck_10_1 (true -> v_407)(false -> v_408);
     v_409 =
+      merge ck_10_2_1 (true -> s_1_St_16_CONFORT_1)(false -> s_1_St_16_ECO_1);
+    v_410 =
+      merge ck_10_2_1 (true -> s_1_St_16_CONFORT_2)(false -> s_1_St_16_ECO_2);
+    v_411 =
       merge ck_10_2_0
         (true -> ((true when false(ck_10_1)) when true(ck_10_2_0)))
         (false -> s_1_St_16_MS_1);
-    v_410 =
+    v_412 =
       merge ck_10_2_0
         (true -> ((true when false(ck_10_1)) when true(ck_10_2_0)))
         (false -> s_1_St_16_MS_2);
-    s_1_1 = merge ck_10_1 (true -> v_407)(false -> v_409);
-    s_1_2 = merge ck_10_1 (true -> v_408)(false -> v_410);
-    v_411 =
+    s_1_1 = merge ck_10_1 (true -> v_409)(false -> v_411);
+    s_1_2 = merge ck_10_1 (true -> v_410)(false -> v_412);
+    v_413 =
       merge ck_10_2_1
         (true -> ns_8_St_16_CONFORT_1)(false -> ns_8_St_16_ECO_1);
-    v_412 =
+    v_414 =
       merge ck_10_2_1
         (true -> ns_8_St_16_CONFORT_2)(false -> ns_8_St_16_ECO_2);
-    v_413 =
+    v_415 =
       merge ck_10_2_0
         (true -> ((true when false(ck_10_1)) when true(ck_10_2_0)))
         (false -> ns_8_St_16_MS_1);
-    v_414 =
-      merge ck_10_2_0
-        (true -> ((true when false(ck_10_1)) when true(ck_10_2_0)))
-        (false -> ns_8_St_16_MS_2);
-    ns_8_1 = merge ck_10_1 (true -> v_411)(false -> v_413);
-    ns_8_2 = merge ck_10_1 (true -> v_412)(false -> v_414);
-    v_415 =
-      merge ck_10_2_1 (true -> nr_8_St_16_CONFORT)(false -> nr_8_St_16_ECO);
     v_416 =
       merge ck_10_2_0
         (true -> ((true when false(ck_10_1)) when true(ck_10_2_0)))
+        (false -> ns_8_St_16_MS_2);
+    ns_8_1 = merge ck_10_1 (true -> v_413)(false -> v_415);
+    ns_8_2 = merge ck_10_1 (true -> v_414)(false -> v_416);
+    v_417 =
+      merge ck_10_2_1 (true -> nr_8_St_16_CONFORT)(false -> nr_8_St_16_ECO);
+    v_418 =
+      merge ck_10_2_0
+        (true -> ((true when false(ck_10_1)) when true(ck_10_2_0)))
         (false -> nr_8_St_16_MS);
-    nr_8 = merge ck_10_1 (true -> v_415)(false -> v_416);
+    nr_8 = merge ck_10_1 (true -> v_417)(false -> v_418);
     ck_10_2_1 = (ck_10_2 when true(ck_10_1));
     ck_10_2_0 = (ck_10_2 when false(ck_10_1));
     s_1_St_16_MS_2_1 = (s_1_St_16_MS_2 when true(s_1_St_16_MS_1));
@@ -3560,91 +3563,91 @@ contract
       (ns_8_St_16_CONFORT_2 when true(ns_8_St_16_CONFORT_1));
     ns_8_St_16_CONFORT_2_0 =
       (ns_8_St_16_CONFORT_2 when false(ns_8_St_16_CONFORT_1));
-    v_417 = false fby ns_8_1;
-    v_418 = false fby ns_8_2;
-    ck_9_1 = v_417;
-    ck_9_2 = v_418;
+    v_419 = false fby ns_8_1;
+    v_420 = false fby ns_8_2;
+    ck_9_1 = v_419;
+    ck_9_2 = v_420;
     r_8_St_16_MS =
       if ((eco_1 when false(ck_9_1)) when false(ck_9_2_0))
       then true
-      else v_79;
+      else v_81;
     s_13_St_16_MS_1 =
       if ((eco_1 when false(ck_9_1)) when false(ck_9_2_0))
       then true
-      else v_78_1;
+      else v_80_1;
     s_13_St_16_MS_2 =
       if ((eco_1 when false(ck_9_1)) when false(ck_9_2_0))
       then false
-      else v_78_2;
-    v_79 =
+      else v_80_2;
+    v_81 =
       if ((confort_1 when false(ck_9_1)) when false(ck_9_2_0))
       then true
       else ((pnr_8 when false(ck_9_1)) when false(ck_9_2_0));
-    v_78_1 =
+    v_80_1 =
       if ((confort_1 when false(ck_9_1)) when false(ck_9_2_0))
       then true
       else false;
-    v_78_2 =
+    v_80_2 =
       if ((confort_1 when false(ck_9_1)) when false(ck_9_2_0))
       then true
       else false;
-    v_78_2_1 = (v_78_2 when true(v_78_1));
-    v_78_2_0 = (v_78_2 when false(v_78_1));
-    r_8_St_16_ECO = if v_75 then true else v_77;
-    s_13_St_16_ECO_1 = if v_75 then false else v_76_1;
-    s_13_St_16_ECO_2 = if v_75 then false else v_76_2;
-    v_77 =
+    v_80_2_1 = (v_80_2 when true(v_80_1));
+    v_80_2_0 = (v_80_2 when false(v_80_1));
+    r_8_St_16_ECO = if v_77 then true else v_79;
+    s_13_St_16_ECO_1 = if v_77 then false else v_78_1;
+    s_13_St_16_ECO_2 = if v_77 then false else v_78_2;
+    v_79 =
       if ((confort_1 when true(ck_9_1)) when false(ck_9_2_1))
       then true
       else ((pnr_8 when true(ck_9_1)) when false(ck_9_2_1));
-    v_76_1 =
+    v_78_1 =
       if ((confort_1 when true(ck_9_1)) when false(ck_9_2_1))
       then true
       else true;
-    v_76_2 =
+    v_78_2 =
       if ((confort_1 when true(ck_9_1)) when false(ck_9_2_1))
       then true
       else false;
-    v_75 = not(((eco_1 when true(ck_9_1)) when false(ck_9_2_1)));
-    v_76_2_1 = (v_76_2 when true(v_76_1));
-    v_76_2_0 = (v_76_2 when false(v_76_1));
-    r_8_St_16_CONFORT = if v_72 then true else v_74;
-    s_13_St_16_CONFORT_1 = if v_72 then false else v_73_1;
-    s_13_St_16_CONFORT_2 = if v_72 then false else v_73_2;
-    v_74 =
+    v_77 = not(((eco_1 when true(ck_9_1)) when false(ck_9_2_1)));
+    v_78_2_1 = (v_78_2 when true(v_78_1));
+    v_78_2_0 = (v_78_2 when false(v_78_1));
+    r_8_St_16_CONFORT = if v_74 then true else v_76;
+    s_13_St_16_CONFORT_1 = if v_74 then false else v_75_1;
+    s_13_St_16_CONFORT_2 = if v_74 then false else v_75_2;
+    v_76 =
       if ((eco_1 when true(ck_9_1)) when true(ck_9_2_1))
       then true
       else ((pnr_8 when true(ck_9_1)) when true(ck_9_2_1));
-    v_73_1 =
+    v_75_1 =
       if ((eco_1 when true(ck_9_1)) when true(ck_9_2_1)) then true else true;
-    v_73_2 =
+    v_75_2 =
       if ((eco_1 when true(ck_9_1)) when true(ck_9_2_1)) then false else true;
-    v_72 = not(((confort_1 when true(ck_9_1)) when true(ck_9_2_1)));
-    v_73_2_1 = (v_73_2 when true(v_73_1));
-    v_73_2_0 = (v_73_2 when false(v_73_1));
-    v_419 =
+    v_74 = not(((confort_1 when true(ck_9_1)) when true(ck_9_2_1)));
+    v_75_2_1 = (v_75_2 when true(v_75_1));
+    v_75_2_0 = (v_75_2 when false(v_75_1));
+    v_421 =
       merge ck_9_2_1
         (true -> s_13_St_16_CONFORT_1)(false -> s_13_St_16_ECO_1);
-    v_420 =
+    v_422 =
       merge ck_9_2_1
         (true -> s_13_St_16_CONFORT_2)(false -> s_13_St_16_ECO_2);
-    v_421 =
+    v_423 =
       merge ck_9_2_0
         (true -> ((true when false(ck_9_1)) when true(ck_9_2_0)))
         (false -> s_13_St_16_MS_1);
-    v_422 =
-      merge ck_9_2_0
-        (true -> ((true when false(ck_9_1)) when true(ck_9_2_0)))
-        (false -> s_13_St_16_MS_2);
-    s_13_1 = merge ck_9_1 (true -> v_419)(false -> v_421);
-    s_13_2 = merge ck_9_1 (true -> v_420)(false -> v_422);
-    v_423 =
-      merge ck_9_2_1 (true -> r_8_St_16_CONFORT)(false -> r_8_St_16_ECO);
     v_424 =
       merge ck_9_2_0
         (true -> ((true when false(ck_9_1)) when true(ck_9_2_0)))
+        (false -> s_13_St_16_MS_2);
+    s_13_1 = merge ck_9_1 (true -> v_421)(false -> v_423);
+    s_13_2 = merge ck_9_1 (true -> v_422)(false -> v_424);
+    v_425 =
+      merge ck_9_2_1 (true -> r_8_St_16_CONFORT)(false -> r_8_St_16_ECO);
+    v_426 =
+      merge ck_9_2_0
+        (true -> ((true when false(ck_9_1)) when true(ck_9_2_0)))
         (false -> r_8_St_16_MS);
-    r_8 = merge ck_9_1 (true -> v_423)(false -> v_424);
+    r_8 = merge ck_9_1 (true -> v_425)(false -> v_426);
     ck_9_2_1 = (ck_9_2 when true(ck_9_1));
     ck_9_2_0 = (ck_9_2 when false(ck_9_1));
     s_13_St_16_MS_2_1 = (s_13_St_16_MS_2 when true(s_13_St_16_MS_1));
