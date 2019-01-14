@@ -9,10 +9,19 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 from random import randint
 from teste3 import TemperatureModel
+import requests
+
 
 app = Flask(__name__)
 Bootstrap(app)
 app.secret_key = 'admin'
+
+def getAutomatStatus(tIn):
+    URL = "http://maps.googleapis.com/maps/api/geocode/json"
+    PARAMS = {'tIn':tIn}
+    r = requests.get(URL, PARAMS)
+    data = r.json()
+    return data
 
 @app.route("/simulador", methods=['GET', 'POST'])
 def simulador():
@@ -77,10 +86,13 @@ def simuladorComControle(maxTemperatura, minTemperatura):
     n=size
     #time points
     t = np.linspace(0,size, n)
+    t15 = np.linspace(0, int(size/(60*15)), int(size/(60*15)))
     #store soluciton
     x = np.empty_like(t)
+    min15 = np.empty_like(t15)
     x[0] = tIn
     l_tOut = np.empty_like(t)
+    l_tOut15 = []
 
     u = []
     print("Gerando Pontos")
@@ -107,23 +119,46 @@ def simuladorComControle(maxTemperatura, minTemperatura):
 
         u.append(t0)
 
+    heater_status = 0
+    ventilation_status = 0.0005
 
     for i in range(1,n,1):
         tspan= [t[i-1],t[i]]
-        # if tIn:
-        #     print(tIn,u[i]['tOut'])
-        #     if tIn<minTemperatura:
-        #         u[i]["number_heater"]=2
-        #         # u[i]["qv_ventilation_rate"]=0.0005
-        #     elif tIn>maxTemperatura:
-        #         u[i]["number_heater"]=0
-        #         # u[i]["qv_ventilation_rate"]=0.003
+        if tIn:
+            if i%(60) == 0:
+                # print(tIn,u[i]['tOut'])
+                autConfig = getAutomatStatus(tIn)
+
+                if autConfig["heater_status"] == 1:
+                    heater_status = 2
+                else:
+                    heater_status = 0
+
+                if autConfig["ventilation_status"] == 1:
+                    ventilation_status = 0.003
+                else:
+                    ventilation_status = 0.0005
+
+                # if tIn<minTemperatura:
+                #     heater_status = 2
+                #     ventilation_status = 0.0005
+                # elif tIn>maxTemperatura:
+                #     heater_status = 0
+                #     ventilation_status = 100000
+
+        u[i]["number_heater"] = heater_status
+        u[i]["qv_ventilation_rate"] = ventilation_status
         z = odeint(TemperatureModel, tIn, tspan, args=(u[i],))
         x[i]=z[1][0]
         tIn= z[1][0]
 
-    plt.plot(t,x)
-    plt.plot(t,l_tOut)
+        if i%(60*15) == 0:
+            l_tOut15.append(z[1][0])
+
+    # plt.plot(t,x)
+    # plt.plot(t,l_tOut)
+    # plt.plot(t,x)
+    plt.plot(t15,l_tOut15)
     plt.xlabel('time')
     plt.ylabel('tIn(t)')
     plt.show()
