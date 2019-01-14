@@ -47,7 +47,7 @@ def TemperatureModel(tIn, t, parameters):
     qv_ventilation_rate = parameters["qv_ventilation_rate"]
     k = parameters["k"]
 
-    print(tOut,"-",qGRout)
+    # print(tOut,"-",qGRout)
 
     #Radiacao solar dentro da gh
     qGRin = QGRinEq(transmitance_g_m, qGRout)
